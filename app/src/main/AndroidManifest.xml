@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.nutritiontips.NutritionTipsDetailsActivity"></activity>
+        <activity android:name=".activities.nutritiontips.NutritionTipsListActivity" />
+        <activity android:name=".activities.mealplan.NewMealPlanActivity" />
+        <activity android:name=".activities.mealplan.MealPlanListActivity" />
+        <activity android:name=".activities.healthtips.HaelthTipsDetailsActivity" />
+        <activity android:name=".activities.healthtips.HealthTipsListActivity" />
+        <activity android:name=".activities.fooditems.FoodDetailsActivity" />
+        <activity android:name=".activities.fooditems.FoodListActivity" />
+        <activity android:name=".activities.base.SplashActivity" />
+        <activity android:name=".activities.calculatecalorie.CalorieResultActivity" />
+        <activity android:name=".activities.calculatecalorie.CalculateCalorieActivity" />
+        <activity android:name=".activities.base.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

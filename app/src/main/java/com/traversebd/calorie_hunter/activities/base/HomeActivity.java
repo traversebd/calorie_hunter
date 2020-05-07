@@ -1,10 +1,10 @@
-package com.traversebd.calorie_hunter;
+package com.traversebd.calorie_hunter.activities.base;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import com.traversebd.calorie_hunter.R;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
