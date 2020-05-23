@@ -20,7 +20,8 @@
         <activity android:name=".activities.base.SplashActivity" />
         <activity android:name=".activities.calculatecalorie.CalorieResultActivity" />
         <activity android:name=".activities.calculatecalorie.CalculateCalorieActivity" />
-        <activity android:name=".activities.base.HomeActivity">
+        <activity android:name=".activities.base.HomeActivity"
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
