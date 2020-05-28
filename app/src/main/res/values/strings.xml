@@ -13,4 +13,8 @@
     <string name="evening_snacks">Evening Snacks</string>
     <string name="dinner">Dinner</string>
     <string name="snacks">Snacks</string>
+    <string name="meal_plan">Meal Plan</string>
+    <string name="health_tips">Health Tips</string>
+    <string name="nutrition_tips">Nutrition Tips</string>
+    <string name="calculate_calorie">Calculate Calorie</string>
 </resources>
