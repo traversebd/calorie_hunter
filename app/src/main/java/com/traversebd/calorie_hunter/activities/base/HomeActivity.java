@@ -22,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //region init sliding nav drawer
         slidingRootNav = new SlidingRootNavBuilder(this)
                 .withToolbarMenuToggle(null)
                 .withMenuOpened(false)
@@ -29,9 +30,23 @@ public class HomeActivity extends AppCompatActivity {
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.menu_left_drawer)
                 .inject();
-        navRecyclerView = findViewById(R.id.list);
-        setDataAdapter();
+        //endregion
 
+        //region init components and perform UI interactions
+        initUI();
+        bindUIWithComponents();
+        //endregion
+    }
+
+    //region init XML components with backend
+    private void initUI() {
+        navRecyclerView = findViewById(R.id.list);
+    }
+    //endregion
+
+    //region perform UI interactions
+    private void bindUIWithComponents() {
+        setDataAdapter();
         drawerRecyclerAdapter.setOnItemClickListener(new NavDrawerRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(NavDrawer navDrawer) {
@@ -51,14 +66,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+    //endregion
 
+    //region set drawer adapter
     private void setDataAdapter() {
         drawerRecyclerAdapter = new NavDrawerRecyclerAdapter(this,getDrawerItem());
         navRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         navRecyclerView.setAdapter(drawerRecyclerAdapter);
         drawerRecyclerAdapter.notifyDataSetChanged();
     }
+    //endregion
 
+    //region get drawer list items
     private ArrayList<NavDrawer> getDrawerItem() {
         ArrayList<NavDrawer> items = new ArrayList<>();
         items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
@@ -67,4 +86,5 @@ public class HomeActivity extends AppCompatActivity {
         items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
         return items;
     }
+    //endregion
 }

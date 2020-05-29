@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">calorie_hunter</string>
+    <string name="app_name">Calorie Hunter</string>
     <string name="check_your_data">Check your data</string>
     <string name="select_correct_data">Select correct data</string>
     <string name="select_your_option">Select your option</string>
@@ -17,4 +17,6 @@
     <string name="health_tips">Health Tips</string>
     <string name="nutrition_tips">Nutrition Tips</string>
     <string name="calculate_calorie">Calculate Calorie</string>
+    <string name="developed_by">Developed By</string>
+    <string name="sakhawat_hossain">Sakhawat Hossain</string>
 </resources>

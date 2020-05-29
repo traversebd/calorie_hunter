@@ -10,6 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activities.base.SplashActivity"
+            android:theme="@style/AppThemeSplash"
+            android:screenOrientation="unspecified" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activities.nutritiontips.NutritionTipsDetailsActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:screenOrientation="unspecified"/>
@@ -42,10 +52,6 @@
             android:theme="@style/AppThemeNoActionBar"
             android:screenOrientation="unspecified"/>
         <activity
-            android:name=".activities.base.SplashActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified" />
-        <activity
             android:name=".activities.calculatecalorie.CalorieResultActivity"
             android:theme="@style/AppThemeNoActionBar"
             android:screenOrientation="unspecified"/>
@@ -56,13 +62,7 @@
         <activity
             android:name=".activities.base.HomeActivity"
             android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="unspecified"/>
     </application>
 
 </manifest>
