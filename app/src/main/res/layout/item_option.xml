@@ -22,8 +22,7 @@
             android:id="@+id/Icon"
             android:layout_width="24dp"
             android:layout_gravity="center"
-            android:layout_height="24dp"
-            android:tag="Drawable"/>
+            android:layout_height="24dp"/>
 
         <Space
             android:layout_width="12dp"

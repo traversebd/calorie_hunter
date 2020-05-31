@@ -22,4 +22,7 @@
     <string name="food_items">Food Items</string>
     <string name="team_travers">Team Travers</string>
     <string name="health_quotes">\"Attention to health is life\'s greatest hindrance.\"</string>
+    <string name="sleeping_tips">Sleeping Tips</string>
+    <string name="hint_time_text">Its 11:00 PM</string>
+    <string name="time_to_sleep">Time to sleep early</string>
 </resources>

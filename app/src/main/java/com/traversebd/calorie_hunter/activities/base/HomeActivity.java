@@ -83,6 +83,7 @@ public class HomeActivity extends AppCompatActivity {
         items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
         items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
         items.add(new NavDrawer(R.drawable.ic_nutrition_tips,getString(R.string.nutrition_tips)));
+        items.add(new NavDrawer(R.drawable.ic_sleep_time,getString(R.string.sleeping_tips)));
         items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
         return items;
     }
