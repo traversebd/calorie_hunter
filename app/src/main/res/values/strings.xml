@@ -25,4 +25,8 @@
     <string name="sleeping_tips">Sleeping Tips</string>
     <string name="hint_time_text">Its 11:00 PM</string>
     <string name="time_to_sleep">Time to sleep early</string>
+    <string name="breakfast_items">Breakfast Items</string>
+    <string name="lunch_items">Lunch Items</string>
+    <string name="snacks_items">Snacks items</string>
+    <string name="dinner_items">Dinner Items</string>
 </resources>

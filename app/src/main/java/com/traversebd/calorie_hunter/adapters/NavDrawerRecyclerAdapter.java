@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.traversebd.calorie_hunter.R;
-import com.traversebd.calorie_hunter.models.NavDrawer;
+import com.traversebd.calorie_hunter.models.drawer.NavDrawer;
 import java.util.ArrayList;
 
 public class NavDrawerRecyclerAdapter extends RecyclerView.Adapter<NavDrawerRecyclerAdapter.ViewHolder> {

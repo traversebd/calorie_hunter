@@ -1,4 +1,4 @@
-package com.traversebd.calorie_hunter.models;
+package com.traversebd.calorie_hunter.models.drawer;
 
 public class NavDrawer {
 

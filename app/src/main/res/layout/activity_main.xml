@@ -1,354 +1,581 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_white_1000"
     tools:context=".activities.base.HomeActivity">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <!--top banner part-->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="240dp"
+            android:background="@drawable/top_bg">
 
-            <!--top banner part-->
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/AppBar"
                 android:layout_width="match_parent"
-                android:layout_height="268dp"
-                android:background="@drawable/top_bg">
-
-                <LinearLayout
-                    android:id="@+id/AppBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_alignParentTop="true">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_margin="10dp"
-                        android:elevation="0dp"
-                        android:translationZ="0dp"
-                        app:cardBackgroundColor="@color/transparent"
-                        app:cardCornerRadius="0dp"
-                        app:cardElevation="0dp">
-
-                        <ImageView
-                            android:id="@+id/DrawerButton"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:layout_gravity="center"
-                            android:clickable="true"
-                            android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:padding="4dp"
-                            android:src="@drawable/ic_menu_new"
-                            android:tint="@color/md_green_800" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="10dp"
-                        android:gravity="center|left"
-                        android:text="Home Page"
-                        android:textColor="@color/md_green_900"
-                        android:textSize="20sp"
-                        android:visibility="visible" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/GreetingsText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_below="@id/AppBar"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="20dp"
-                    android:text="Good Evening"
-                    android:textColor="@color/md_green_700"
-                    android:textSize="24sp"
-                    android:typeface="monospace" />
-
-                <TextView
-                    android:id="@+id/DateTimeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/GreetingsText"
-                    android:layout_marginLeft="22dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:text="Feb 10,2020 || Saturday"
-                    android:textColor="@color/md_green_600"
-                    android:textSize="12sp" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentTop="true">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:elevation="0dp"
+                    android:translationZ="0dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/DrawerButton"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="4dp"
+                        android:src="@drawable/ic_menu_new"
+                        android:tint="@color/md_green_800" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="20dp"
-                    app:cardUseCompatPadding="true"
-                    app:cardElevation="2dp"
-                    app:cardCornerRadius="8dp"
-                    android:translationZ="1dp"
-                    android:background="@drawable/rounded_layout">
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center|left"
+                    android:text="Home Page"
+                    android:textColor="@color/md_green_900"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/GreetingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_below="@id/AppBar"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="24dp"
+                android:text="Good Evening"
+                android:textColor="@color/md_green_700"
+                android:textSize="24sp"
+                android:typeface="monospace" />
+
+            <TextView
+                android:id="@+id/DateTimeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/GreetingsText"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:text="Feb 10,2020 || Saturday"
+                android:textColor="@color/md_green_600"
+                android:textSize="12sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+                android:translationZ="1dp"
+                android:background="@drawable/rounded_layout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:padding="8dp"
+                        android:tint="@color/md_green_600"
+                        android:src="@drawable/ic_sleep_time"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center|left"
                         android:layout_margin="4dp"
-                        android:orientation="horizontal">
+                        android:padding="4dp"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_margin="4dp"
-                            android:padding="4dp"
-                            android:src="@drawable/breakfast"/>
-
-                        <LinearLayout
+                        <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center|left"
-                            android:layout_margin="4dp"
-                            android:padding="4dp"
+                            android:text="@string/hint_time_text"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/time_to_sleep"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/breakfast_items"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_green_900"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="176dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/hint_time_text"/>
+                                android:layout_margin="8dp"
+                                android:text="@string/breakfast"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/breakfast"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/time_to_sleep"/>
+                                android:layout_margin="8dp"
+                                android:text="@string/lunch"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
 
-                        </LinearLayout>
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/lunch"
+                                android:scaleType="centerInside"/>
 
-                    </LinearLayout>
+                        </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
 
-            </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="@string/food_items"
-                android:textStyle="bold"
-                android:textColor="@color/md_green_900"
-                android:textSize="18sp"/>
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    app:cardElevation="8dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:translationZ="4dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardUseCompatPadding="true">
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/lunch_items"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_green_900"
+                    android:textSize="18sp"/>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/menu_back"
-                        android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="176dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/TitleBreakfast"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardElevation="8dp"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="@string/breakfast"
-                            android:textColor="@color/md_green_900"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_gravity="center"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/breakfast"
-                            android:scaleType="centerInside"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/snacks"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/snacks"
+                                android:scaleType="centerInside"/>
 
-                </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardElevation="8dp"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/dinner"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/dinner"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    app:cardElevation="8dp"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    android:translationZ="4dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardUseCompatPadding="true">
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/snacks_items"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_green_900"
+                    android:textSize="18sp"/>
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/menu_back"
-                        android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="176dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/TitleLunch"
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="@string/lunch"
-                            android:textColor="@color/md_green_900"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_gravity="center"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/lunch"
-                            android:scaleType="centerInside"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/breakfast"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
 
-                    </RelativeLayout>
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/breakfast"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/lunch"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/lunch"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
 
 
-                </androidx.cardview.widget.CardView>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/dinner_items"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_green_900"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="176dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardElevation="8dp"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/snacks"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/snacks"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardElevation="8dp"
+                        android:translationZ="4dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/menu_back"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="@string/dinner"
+                                android:textColor="@color/md_green_900"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
+
+                            <ImageView
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_gravity="center"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/dinner"
+                                android:scaleType="centerInside"/>
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="176dp"
-                android:layout_margin="10dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
+        </ScrollView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    app:cardElevation="8dp"
-                    android:translationZ="4dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardUseCompatPadding="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/menu_back"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/TitleSnacks"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="@string/snacks"
-                            android:textColor="@color/md_green_900"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_gravity="center"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/snacks"
-                            android:scaleType="centerInside"/>
-
-                    </RelativeLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:foreground="?attr/selectableItemBackgroundBorderless"
-                    app:cardElevation="8dp"
-                    android:translationZ="4dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardUseCompatPadding="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/menu_back"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/TitleDinner"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="@string/dinner"
-                            android:textColor="@color/md_green_900"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-
-                        <ImageView
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:layout_gravity="center"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/dinner"
-                            android:scaleType="centerInside"/>
-
-                    </RelativeLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

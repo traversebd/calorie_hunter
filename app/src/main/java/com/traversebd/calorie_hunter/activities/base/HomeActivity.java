@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
-import com.traversebd.calorie_hunter.models.NavDrawer;
+import com.traversebd.calorie_hunter.models.drawer.NavDrawer;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 import java.util.ArrayList;
@@ -79,6 +79,54 @@ public class HomeActivity extends AppCompatActivity {
 
     //region get drawer list items
     private ArrayList<NavDrawer> getDrawerItem() {
+        ArrayList<NavDrawer> items = new ArrayList<>();
+        items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
+        items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
+        items.add(new NavDrawer(R.drawable.ic_nutrition_tips,getString(R.string.nutrition_tips)));
+        items.add(new NavDrawer(R.drawable.ic_sleep_time,getString(R.string.sleeping_tips)));
+        items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
+        return items;
+    }
+    //endregion
+
+    //region get morning food items
+    private ArrayList<NavDrawer> getMorningFoodItem() {
+        ArrayList<NavDrawer> items = new ArrayList<>();
+        items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
+        items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
+        items.add(new NavDrawer(R.drawable.ic_nutrition_tips,getString(R.string.nutrition_tips)));
+        items.add(new NavDrawer(R.drawable.ic_sleep_time,getString(R.string.sleeping_tips)));
+        items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
+        return items;
+    }
+    //endregion
+
+    //region get lunch food items
+    private ArrayList<NavDrawer> getLunchFoodItem() {
+        ArrayList<NavDrawer> items = new ArrayList<>();
+        items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
+        items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
+        items.add(new NavDrawer(R.drawable.ic_nutrition_tips,getString(R.string.nutrition_tips)));
+        items.add(new NavDrawer(R.drawable.ic_sleep_time,getString(R.string.sleeping_tips)));
+        items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
+        return items;
+    }
+    //endregion
+
+    //region get snacks food items
+    private ArrayList<NavDrawer> getSnacksFoodItem() {
+        ArrayList<NavDrawer> items = new ArrayList<>();
+        items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
+        items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
+        items.add(new NavDrawer(R.drawable.ic_nutrition_tips,getString(R.string.nutrition_tips)));
+        items.add(new NavDrawer(R.drawable.ic_sleep_time,getString(R.string.sleeping_tips)));
+        items.add(new NavDrawer(R.drawable.ic_calories_calculator,getString(R.string.calculate_calorie)));
+        return items;
+    }
+    //endregion
+
+    //region get dinner food items
+    private ArrayList<NavDrawer> getDinnerFoodItem() {
         ArrayList<NavDrawer> items = new ArrayList<>();
         items.add(new NavDrawer(R.drawable.ic_meal_plan,getString(R.string.meal_plan)));
         items.add(new NavDrawer(R.drawable.ic_health_tips,getString(R.string.health_tips)));
