@@ -10,17 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.traversebd.calorie_hunter.R;
-import com.traversebd.calorie_hunter.models.drawer.NavDrawer;
+import com.traversebd.calorie_hunter.models.food.FoodItem;
 import java.util.ArrayList;
 
-public class NavDrawerRecyclerAdapter extends RecyclerView.Adapter<NavDrawerRecyclerAdapter.ViewHolder> {
+public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<NavDrawer> drawerList;
+    private ArrayList<FoodItem> foodItems;
     private onItemClickListener onItemClickListener;
 
-    public NavDrawerRecyclerAdapter(Context context, ArrayList<NavDrawer> drawerList) {
+    public FoodRecyclerAdapter(Context context, ArrayList<FoodItem> foodItems) {
         this.context = context;
-        this.drawerList = drawerList;
+        this.foodItems = foodItems;
     }
 
     public void setOnItemClickListener(onItemClickListener onItemClickListener) {
@@ -28,33 +28,33 @@ public class NavDrawerRecyclerAdapter extends RecyclerView.Adapter<NavDrawerRecy
     }
 
     public interface onItemClickListener{
-        void onItemClick(NavDrawer navDrawer);
+        void onItemClick(FoodItem foodItem);
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.adapter_recycler_nav_list,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_recycler_all_food_list,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final NavDrawer navDrawer = drawerList.get(position);
-        holder.Title.setText(navDrawer.getTitle());
-        holder.Icon.setBackgroundResource(navDrawer.getIcon());
+        final FoodItem foodItem = foodItems.get(position);
+        holder.Title.setText(foodItem.getTitle());
+        holder.Icon.setBackgroundResource(foodItem.getIcon());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener.onItemClick(navDrawer);
+                onItemClickListener.onItemClick(foodItem);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return drawerList.size();
+        return foodItems.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

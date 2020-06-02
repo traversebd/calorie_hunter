@@ -158,419 +158,84 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
                     android:text="@string/breakfast_items"
                     android:textStyle="bold"
                     android:textColor="@color/md_green_900"
                     android:textSize="18sp"/>
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/morningRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_height="144dp"
+                    tools:listitem="@layout/adapter_recycler_all_food_list"
+                    app:spanCount="3"
                     android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginRight="6dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/breakfast"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/breakfast"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="6dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/lunch"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/lunch"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="24dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/lunch_items"
                     android:textStyle="bold"
                     android:textColor="@color/md_green_900"
                     android:textSize="18sp"/>
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lunchRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_height="144dp"
+                    tools:listitem="@layout/adapter_recycler_all_food_list"
+                    app:spanCount="3"
                     android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        app:cardElevation="8dp"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/snacks"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/snacks"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        app:cardElevation="8dp"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/dinner"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/dinner"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/snacks_items"
                     android:textStyle="bold"
                     android:textColor="@color/md_green_900"
                     android:textSize="18sp"/>
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/snacksRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_height="144dp"
+                    tools:listitem="@layout/adapter_recycler_all_food_list"
+                    app:spanCount="3"
                     android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginRight="6dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/breakfast"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/breakfast"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="6dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/lunch"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/lunch"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/dinner_items"
                     android:textStyle="bold"
                     android:textColor="@color/md_green_900"
                     android:textSize="18sp"/>
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dinnerRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="176dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_height="144dp"
+                    tools:listitem="@layout/adapter_recycler_all_food_list"
+                    app:spanCount="3"
                     android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        app:cardElevation="8dp"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/snacks"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/snacks"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?attr/selectableItemBackgroundBorderless"
-                        app:cardElevation="8dp"
-                        android:translationZ="4dp"
-                        app:cardCornerRadius="12dp"
-                        app:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/menu_back"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="8dp"
-                                android:text="@string/dinner"
-                                android:textColor="@color/md_green_900"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textStyle="bold"/>
-
-                            <ImageView
-                                android:layout_width="56dp"
-                                android:layout_height="56dp"
-                                android:layout_gravity="center"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/dinner"
-                                android:scaleType="centerInside"/>
-
-                        </RelativeLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"/>
 
             </LinearLayout>
 
