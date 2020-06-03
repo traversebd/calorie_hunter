@@ -8,10 +8,10 @@
     android:layout_marginBottom="8dp"
     android:layout_marginRight="6dp"
     android:layout_weight="1"
-    app:cardElevation="8dp"
+    app:cardElevation="6dp"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
-    android:translationZ="4dp"
+    android:translationZ="3dp"
     app:cardCornerRadius="12dp"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="@color/transparent">
@@ -32,6 +32,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textSize="16sp"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textStyle="bold"/>
 
         <ImageView

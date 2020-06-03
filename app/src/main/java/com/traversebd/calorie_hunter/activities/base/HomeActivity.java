@@ -5,9 +5,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
 import com.traversebd.calorie_hunter.adapters.FoodRecyclerAdapter;
 import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
 import com.traversebd.calorie_hunter.db.food.FoodViewModel;
@@ -26,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         //region init sliding nav drawer
         slidingRootNav = new SlidingRootNavBuilder(this)
@@ -132,7 +134,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
             }
         });
         //endregion
@@ -150,7 +152,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
             }
         });
         //endregion
@@ -168,7 +170,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
             }
         });
         //endregion
@@ -186,7 +188,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
             }
         });
         //endregion
