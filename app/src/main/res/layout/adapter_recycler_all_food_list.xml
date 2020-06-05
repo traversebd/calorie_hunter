@@ -41,8 +41,10 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/Title"
             android:layout_centerInParent="true"
-            android:src="@drawable/breakfast"
+            android:background="@drawable/breakfast"
             android:scaleType="centerInside"/>
 
     </RelativeLayout>

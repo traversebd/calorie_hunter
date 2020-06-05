@@ -95,9 +95,9 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="20dp"
                 app:cardUseCompatPadding="true"
-                app:cardElevation="2dp"
+                app:cardElevation="4dp"
                 app:cardCornerRadius="8dp"
-                android:translationZ="1dp"
+                android:translationZ="2dp"
                 android:background="@drawable/rounded_layout">
 
                 <LinearLayout
@@ -174,6 +174,17 @@
                             android:textColor="@color/md_green_900"
                             android:textSize="18sp"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:layout_toLeftOf="@id/ViewAllBreakfastItems"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/md_green_900"
+                            android:textSize="14sp"/>
+
                         <ImageView
                             android:id="@+id/ViewAllBreakfastItems"
                             android:layout_width="28dp"
@@ -184,7 +195,7 @@
                             android:clickable="true"
                             android:background="@drawable/round_drawable_view_all"
                             android:padding="8dp"
-                            android:layout_margin="4dp"
+                            android:layout_margin="8dp"
                             android:src="@drawable/ic_right_arrow"/>
 
                     </RelativeLayout>
@@ -196,7 +207,7 @@
                         tools:listitem="@layout/adapter_recycler_all_food_list"
                         app:spanCount="3"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="13dp"
+                        android:layout_marginLeft="14dp"
                         android:layout_marginRight="24dp"/>
 
                 </LinearLayout>
@@ -222,6 +233,17 @@
                             android:textColor="@color/md_green_900"
                             android:textSize="18sp"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:layout_toLeftOf="@id/ViewAllLunchItems"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/md_green_900"
+                            android:textSize="14sp"/>
+
                         <ImageView
                             android:id="@+id/ViewAllLunchItems"
                             android:layout_width="28dp"
@@ -230,6 +252,7 @@
                             android:elevation="4dp"
                             android:clickable="true"
                             android:translationZ="2dp"
+                            android:layout_margin="8dp"
                             android:background="@drawable/round_drawable_view_all"
                             android:padding="8dp"
                             android:src="@drawable/ic_right_arrow"/>
@@ -243,7 +266,7 @@
                         tools:listitem="@layout/adapter_recycler_all_food_list"
                         app:spanCount="3"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="13dp"
+                        android:layout_marginLeft="14dp"
                         android:layout_marginRight="24dp"/>
 
                 </LinearLayout>
@@ -269,6 +292,17 @@
                             android:textColor="@color/md_green_900"
                             android:textSize="18sp"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:layout_toLeftOf="@id/ViewAllSnacksItems"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/md_green_900"
+                            android:textSize="14sp"/>
+
                         <ImageView
                             android:id="@+id/ViewAllSnacksItems"
                             android:layout_width="28dp"
@@ -277,6 +311,7 @@
                             android:elevation="4dp"
                             android:translationZ="2dp"
                             android:clickable="true"
+                            android:layout_margin="8dp"
                             android:background="@drawable/round_drawable_view_all"
                             android:padding="8dp"
                             android:src="@drawable/ic_right_arrow"/>
@@ -290,7 +325,7 @@
                         tools:listitem="@layout/adapter_recycler_all_food_list"
                         app:spanCount="3"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="13dp"
+                        android:layout_marginLeft="14dp"
                         android:layout_marginRight="24dp"/>
 
                 </LinearLayout>
@@ -316,6 +351,17 @@
                             android:textColor="@color/md_green_900"
                             android:textSize="18sp"/>
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all"
+                            android:layout_toLeftOf="@id/ViewAllDinnerItems"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/md_green_900"
+                            android:textSize="14sp"/>
+
                         <ImageView
                             android:id="@+id/ViewAllDinnerItems"
                             android:layout_width="28dp"
@@ -324,6 +370,7 @@
                             android:elevation="4dp"
                             android:translationZ="2dp"
                             android:clickable="true"
+                            android:layout_margin="8dp"
                             android:background="@drawable/round_drawable_view_all"
                             android:padding="8dp"
                             android:src="@drawable/ic_right_arrow"/>
@@ -337,7 +384,7 @@
                         tools:listitem="@layout/adapter_recycler_all_food_list"
                         app:spanCount="3"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="13dp"
+                        android:layout_marginLeft="14dp"
                         android:layout_marginRight="24dp"/>
 
                 </LinearLayout>
