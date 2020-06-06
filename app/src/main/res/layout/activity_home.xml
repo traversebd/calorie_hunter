@@ -44,8 +44,7 @@
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackgroundBorderless"
                         android:padding="4dp"
-                        android:src="@drawable/ic_menu_new"
-                        android:tint="@color/md_green_800" />
+                        android:src="@drawable/ic_menu_new" />
 
                 </androidx.cardview.widget.CardView>
 

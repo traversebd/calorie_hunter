@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
 import com.traversebd.calorie_hunter.adapters.FoodRecyclerAdapter;
@@ -24,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private SlidingRootNav slidingRootNav;
     private RecyclerView navRecycler, morningRecycler, lunchRecycler, snacksRecycler, dinnerRecycler;
     private List<FoodItem> allFoodItems;
+    private ImageView drawerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class HomeActivity extends AppCompatActivity {
     //region init XML components with backend
     private void init() {
         navRecycler = findViewById(R.id.list);
+        drawerButton = findViewById(R.id.DrawerButton);
         morningRecycler = findViewById(R.id.morningRecycler);
         lunchRecycler = findViewById(R.id.lunchRecycler);
         snacksRecycler = findViewById(R.id.snacksRecycler);
@@ -85,19 +88,37 @@ public class HomeActivity extends AppCompatActivity {
         });
         //endregion
 
+        //region set morning list adapter
+        setMorningListAdapter();
+        //endregion
+
+        //region set lunch list adapter
+        setLunchListAdapter();
+        //endregion
+
+        //region set snacks list adapter
+        setSnacksListAdapter();
+        //endregion
+
+        //region set dinner list adapter
+        setDinnerListAdapter();
+        //endregion
+
         //region set drawer adapter
         setDrawerAdapter();
         //endregion
 
-        //region drawer humberger icon
-        findViewById(R.id.DrawerButton).setOnClickListener(new View.OnClickListener() {
+        //region drawer hum-burger icon
+        drawerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(slidingRootNav.isMenuClosed()) {
                     slidingRootNav.openMenu();
+                    drawerButton.setImageResource(R.drawable.ic_left_arrow);
                 }
                 else {
                     slidingRootNav.closeMenu();
+                    drawerButton.setImageResource(R.drawable.ic_menu_new);
                 }
             }
         });
@@ -215,7 +236,7 @@ public class HomeActivity extends AppCompatActivity {
                 items.add(foodItem);
             }
         }
-            return items;
+        return items;
     }
     //endregion
 

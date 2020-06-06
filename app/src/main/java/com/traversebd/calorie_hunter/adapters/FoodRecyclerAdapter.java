@@ -42,7 +42,7 @@ public class FoodRecyclerAdapter extends RecyclerView.Adapter<FoodRecyclerAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final FoodItem foodItem = foodItems.get(position);
         holder.Title.setText(foodItem.getTitle());
-        holder.Icon.setBackgroundResource(foodItem.getIcon());
+        holder.Icon.setImageResource(foodItem.getIcon());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

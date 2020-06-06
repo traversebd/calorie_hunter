@@ -7,7 +7,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.db.food.FoodDao;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
@@ -18,7 +17,7 @@ public abstract class MasterDB extends RoomDatabase {
 
     public abstract FoodDao foodDao();
 
-    //region get singletone async task
+    //region get single-tone async task
     public static synchronized MasterDB getInstance(Context context){
         if (masterDB == null){
             masterDB = Room.databaseBuilder(context.getApplicationContext(),MasterDB.class,"calorie_hunter")
