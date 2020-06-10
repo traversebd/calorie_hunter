@@ -66,7 +66,7 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/morningRecycler"
+                    android:id="@+id/allFoodRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:listitem="@layout/adapter_recycler_all_food_list"

@@ -8,7 +8,7 @@ public class FoodItem {
     @PrimaryKey(autoGenerate = true)
     private int Id;
     private int FoodTypeId;
-    private String  FoodTypeTitle;
+    private String FoodTypeTitle;
     private String Title;
     private int Icon;
     private double AmountOfCalorie;

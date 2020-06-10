@@ -30,4 +30,10 @@
     <string name="snacks_items">Snacks items</string>
     <string name="dinner_items">Dinner Items</string>
     <string name="view_all">View all</string>
+    <string name="coffee">Coffee</string>
+    <string name="biryani">Biryani</string>
+    <string name="description">Description</string>
+    <string name="short_dummy_description">Biryani is full of ingrediants which attracts its good lover.</string>
+    <string name="calorie_sample_hint">420</string>
+    <string name="kcal">Kcal</string>
 </resources>

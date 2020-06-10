@@ -123,6 +123,35 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
         //endregion
+
+        //region all view all item click listener
+        findViewById(R.id.ViewAllBreakfastItems).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",1));
+            }
+        });
+
+        findViewById(R.id.ViewAllLunchItems).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",2));
+            }
+        });
+
+        findViewById(R.id.ViewAllSnacksItems).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",3));
+            }
+        });
+
+        findViewById(R.id.ViewAllDinnerItems).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",4));
+            }
+        });
     }
     //endregion
 
@@ -155,7 +184,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
+
             }
         });
         //endregion

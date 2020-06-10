@@ -1,13 +1,32 @@
 package com.traversebd.calorie_hunter.activities.fooditems;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
+import com.traversebd.calorie_hunter.adapters.CategorizedFoodAdapter;
+import com.traversebd.calorie_hunter.db.food.FoodViewModel;
+import com.traversebd.calorie_hunter.models.food.FoodItem;
+import com.traversebd.calorie_hunter.utils.layoutmanager.VegaLayoutManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FoodListActivity extends AppCompatActivity {
+    private RecyclerView.Adapter adapter;
+    private List<FoodItem> allFoodItems = new ArrayList<>();
+    private static int foodType = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +51,17 @@ public class FoodListActivity extends AppCompatActivity {
         loadExtra();
         //endregion
 
+        //region get all food items
+        FoodViewModel foodViewModel = ViewModelProviders.of(this).get(FoodViewModel.class);
+        foodViewModel.getAllFoodItems().observe(this, new Observer<List<FoodItem>>() {
+            @Override
+            public void onChanged(List<FoodItem> foodItems) {
+                allFoodItems = foodItems;
+                setNewRecycler();
+            }
+        });
+        //endregion
+
         //region back button
         findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,16 +71,36 @@ public class FoodListActivity extends AppCompatActivity {
         });
         //endregion
     }
-    //endregion
 
     //region load intent data
     private void loadExtra(){
-        int foodType = 0;
+        foodType = 0;
         if (getIntent().getIntExtra("foodType",0) != 0){
             foodType = getIntent().getIntExtra("foodType",0);
         }
     }
     //endregion
+
+    private void setNewRecycler() {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.allFoodRecycler);
+        recyclerView.setLayoutManager(new VegaLayoutManager());
+        CategorizedFoodAdapter adapter = new CategorizedFoodAdapter(prepareDataList(),this);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+    //endregion
+
+    //region get data list
+    private ArrayList<FoodItem> prepareDataList() {
+        ArrayList<FoodItem> categorizedFoodList =new ArrayList<>();
+        for (int start = 0; start < allFoodItems.size(); start++) {
+            if (allFoodItems.get(start).getFoodTypeId() == foodType){
+                categorizedFoodList.add(allFoodItems.get(start));
+            }
+        }
+        return categorizedFoodList;
+    }
+    //end region
 
     //region all system callbacks and methods
     @Override

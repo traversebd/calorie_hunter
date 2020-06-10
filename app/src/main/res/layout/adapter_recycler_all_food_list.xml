@@ -5,48 +5,132 @@
     android:id="@+id/item_card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    android:layout_marginRight="6dp"
-    android:layout_weight="1"
-    app:cardElevation="6dp"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
-    android:translationZ="3dp"
     app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    android:translationZ="4dp"
     app:cardUseCompatPadding="true"
-    app:cardBackgroundColor="@color/transparent">
+    app:cardBackgroundColor="@color/md_white_1000">
 
-    <RelativeLayout
+    <!--   Recycler View Item Row   -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_margin="4dp"
+        android:weightSum="8">
 
-        <TextView
-            android:id="@+id/Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@string/breakfast"
-            android:textColor="@color/md_green_900"
-            android:layout_gravity="center"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
             android:gravity="center"
-            android:textSize="16sp"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:textStyle="bold"/>
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/Icon"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
-            android:layout_below="@id/Title"
-            android:layout_centerInParent="true"
-            android:src="@drawable/breakfast"
-            android:scaleType="centerInside"/>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/Icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="A"
+                    android:gravity="center"
+                    android:src="@drawable/ic_biryani" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="5.4"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingLeft="4dp"
+                    android:scrollHorizontally="true"
+                    android:text="@string/biryani"
+                    android:textColor="@color/md_grey_800"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/short_dummy_description"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="8dp"
+                    android:textColor="@color/md_yellow_900"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/AmountOfCalorie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/md_purple_900"
+                android:text="@string/calorie_sample_hint"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/md_blue_grey_600"
+                android:text="@string/kcal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
