@@ -3,6 +3,7 @@ package com.traversebd.calorie_hunter.activities.fooditems;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 
@@ -30,13 +31,23 @@ public class FoodListActivity extends AppCompatActivity {
         //region load intent data
         loadExtra();
         //endregion
+
+        //region back button
+        findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(FoodListActivity.this,HomeActivity.class));
+            }
+        });
+        //endregion
     }
     //endregion
 
     //region load intent data
     private void loadExtra(){
+        int foodType = 0;
         if (getIntent().getIntExtra("foodType",0) != 0){
-            int foodType = getIntent().getIntExtra("foodType",0);
+            foodType = getIntent().getIntExtra("foodType",0);
         }
     }
     //endregion
