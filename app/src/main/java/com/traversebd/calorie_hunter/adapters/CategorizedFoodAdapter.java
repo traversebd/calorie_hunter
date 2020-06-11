@@ -33,7 +33,7 @@ public class CategorizedFoodAdapter extends RecyclerView.Adapter<CategorizedFood
         FoodItem foodItem = allItems.get(position);
         holder.Title.setText(foodItem.getTitle());
         holder.AmountOfCalorie.setText("" + foodItem.getAmountOfCalorie());
-        holder.Description.setText(foodItem.getFoodTypeTitle());
+        holder.FoodShortDescription.setText(foodItem.getFoodShortDescription());
         holder.Icon.setImageResource(foodItem.getIcon());
     }
 
@@ -45,13 +45,13 @@ public class CategorizedFoodAdapter extends RecyclerView.Adapter<CategorizedFood
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView Title;
         TextView AmountOfCalorie;
-        TextView Description;
+        TextView FoodShortDescription;
         ImageView Icon;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             Title = (TextView) itemView.findViewById(R.id.Title);
             AmountOfCalorie = (TextView) itemView.findViewById(R.id.AmountOfCalorie);
-            Description = (TextView) itemView.findViewById(R.id.Description);
+            FoodShortDescription = (TextView) itemView.findViewById(R.id.FoodShortDescription);
             Icon = (ImageView) itemView.findViewById(R.id.Icon);
         }
     }

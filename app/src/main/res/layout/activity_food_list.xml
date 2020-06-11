@@ -72,8 +72,8 @@
                     tools:listitem="@layout/adapter_recycler_all_food_list"
                     app:spanCount="1"
                     android:orientation="vertical"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginRight="24dp"/>
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"/>
 
             </LinearLayout>
 

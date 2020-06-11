@@ -9,6 +9,8 @@ public class FoodItem {
     private int Id;
     private int FoodTypeId;
     private String FoodTypeTitle;
+    private String FoodShortDescription;
+    private String FoodDescription;
     private String Title;
     private int Icon;
     private double AmountOfCalorie;
@@ -22,11 +24,13 @@ public class FoodItem {
     public FoodItem() {
     }
 
-    public FoodItem(int foodTypeId, String foodTypeTitle, String title, int icon, double amountOfCalorie, double amountOfFat, double amountOfFiber, double amountOfProtein,
+    public FoodItem(int foodTypeId, String foodTypeTitle, String title,String foodShortDescription, String foodDescription, int icon, double amountOfCalorie, double amountOfFat, double amountOfFiber, double amountOfProtein,
                     double amountOfSodium, double amountOfSugar, double amountOfCarbohydrates) {
         FoodTypeId = foodTypeId;
         FoodTypeTitle = foodTypeTitle;
         Title = title;
+        FoodShortDescription = foodShortDescription;
+        FoodDescription = foodDescription;
         Icon = icon;
         AmountOfCalorie = amountOfCalorie;
         AmountOfFat = amountOfFat;
@@ -131,5 +135,21 @@ public class FoodItem {
 
     public void setAmountOfCarbohydrates(double amountOfCarbohydrates) {
         AmountOfCarbohydrates = amountOfCarbohydrates;
+    }
+
+    public String getFoodShortDescription() {
+        return FoodShortDescription;
+    }
+
+    public void setFoodShortDescription(String foodShortDescription) {
+        FoodShortDescription = foodShortDescription;
+    }
+
+    public String getFoodDescription() {
+        return FoodDescription;
+    }
+
+    public void setFoodDescription(String foodDescription) {
+        FoodDescription = foodDescription;
     }
 }
