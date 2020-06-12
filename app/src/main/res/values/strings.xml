@@ -37,4 +37,5 @@
     <string name="calorie_sample_hint">420</string>
     <string name="kcal">Kcal</string>
     <string name="zero">0</string>
+    <string name="total_items">Total items</string>
 </resources>

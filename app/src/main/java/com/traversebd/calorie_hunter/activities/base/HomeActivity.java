@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.fooditems.FoodDetailsActivity;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
 import com.traversebd.calorie_hunter.adapters.FoodRecyclerAdapter;
 import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
@@ -86,22 +87,6 @@ public class HomeActivity extends AppCompatActivity {
                 //endregion
             }
         });
-        //endregion
-
-        //region set morning list adapter
-        setMorningListAdapter();
-        //endregion
-
-        //region set lunch list adapter
-        setLunchListAdapter();
-        //endregion
-
-        //region set snacks list adapter
-        setSnacksListAdapter();
-        //endregion
-
-        //region set dinner list adapter
-        setDinnerListAdapter();
         //endregion
 
         //region set drawer adapter
@@ -184,7 +169,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
             }
         });
         //endregion
@@ -202,7 +187,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
             }
         });
         //endregion
@@ -220,7 +205,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
             }
         });
         //endregion
@@ -238,7 +223,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",foodItem.getFoodTypeId()));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
             }
         });
         //endregion

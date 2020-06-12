@@ -4,29 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 import com.traversebd.calorie_hunter.adapters.CategorizedFoodAdapter;
 import com.traversebd.calorie_hunter.db.food.FoodViewModel;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
 import com.traversebd.calorie_hunter.utils.layoutmanager.VegaLayoutManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class FoodListActivity extends AppCompatActivity {
-    private RecyclerView.Adapter adapter;
     private List<FoodItem> allFoodItems = new ArrayList<>();
-    private static int foodType = 0;
+    private static int foodType;
+    private TextView totalItems, foodTypeTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +35,8 @@ public class FoodListActivity extends AppCompatActivity {
 
     //region init all UI with backend
     private void init(){
-
+        totalItems = findViewById(R.id.TotalItems);
+        foodTypeTitle = findViewById(R.id.FoodTypeTitle);
     }
     //endregion
 
@@ -57,7 +52,8 @@ public class FoodListActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<FoodItem> foodItems) {
                 allFoodItems = foodItems;
-                setNewRecycler();
+                totalItems.setText(""+prepareDataList().size());
+                setFoodRecycler();
             }
         });
         //endregion
@@ -70,6 +66,10 @@ public class FoodListActivity extends AppCompatActivity {
             }
         });
         //endregion
+
+        //region set top bar details
+        foodTypeTitle.setText(getFoodTypeTitle());
+        //endregion
     }
 
     //region load intent data
@@ -81,7 +81,7 @@ public class FoodListActivity extends AppCompatActivity {
     }
     //endregion
 
-    private void setNewRecycler() {
+    private void setFoodRecycler() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.allFoodRecycler);
         recyclerView.setLayoutManager(new VegaLayoutManager());
         CategorizedFoodAdapter adapter = new CategorizedFoodAdapter(prepareDataList(),this);
@@ -101,6 +101,17 @@ public class FoodListActivity extends AppCompatActivity {
         return categorizedFoodList;
     }
     //end region
+
+    //region get food type title
+    private String getFoodTypeTitle(){
+        String foodTypeTitle = "";
+        if (foodType == 1) foodTypeTitle = "Breakfast";
+        else if (foodType == 2) foodTypeTitle = "Lunch";
+        else if (foodType == 3) foodTypeTitle = "Snacks";
+        else if (foodType == 4) foodTypeTitle = "Dinner";
+        return foodTypeTitle;
+    }
+    //endregion
 
     //region all system callbacks and methods
     @Override
