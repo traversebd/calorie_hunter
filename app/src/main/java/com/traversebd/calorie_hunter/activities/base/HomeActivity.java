@@ -17,6 +17,7 @@ import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
 import com.traversebd.calorie_hunter.db.food.FoodViewModel;
 import com.traversebd.calorie_hunter.models.drawer.NavDrawer;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
+import com.traversebd.calorie_hunter.utils.Tools;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 import java.util.ArrayList;
@@ -287,6 +288,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         }
         return items;
+    }
+    //endregion
+
+    //region activity own method and their operations
+    @Override
+    public void onBackPressed() {
+        new Tools(this).exitApp();
     }
     //endregion
 }
