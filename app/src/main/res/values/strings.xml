@@ -38,4 +38,9 @@
     <string name="kcal">Kcal</string>
     <string name="zero">0</string>
     <string name="total_items">Total items</string>
+    <string name="egg">Egg</string>
+    <string name="amount_of_calorie">Amount of calorie</string>
+    <string name="amount_of_fat">Amount of fat</string>
+    <string name="amount_of_fiber">Amount of fiber</string>
+    <string name="amount_of_protein">Amount of protein</string>
 </resources>
