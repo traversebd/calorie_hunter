@@ -20,13 +20,15 @@ public class FoodItem implements Serializable {
     private double AmountOfProtein;
     private double AmountOfSodium;
     private double AmountOfSugar;
+    private double AmountOfCholesterol;
     private double AmountOfCarbohydrates;
+    private double AmountOfMagnesium;
 
     public FoodItem() {
     }
 
     public FoodItem(int foodTypeId, String foodTypeTitle, String title,String foodShortDescription, String foodDescription, int icon, double amountOfCalorie, double amountOfFat, double amountOfFiber, double amountOfProtein,
-                    double amountOfSodium, double amountOfSugar, double amountOfCarbohydrates) {
+                    double amountOfSodium, double amountOfSugar, double amountOfCholesterol, double amountOfCarbohydrates, double amountOfMagnesium) {
         FoodTypeId = foodTypeId;
         FoodTypeTitle = foodTypeTitle;
         Title = title;
@@ -39,7 +41,9 @@ public class FoodItem implements Serializable {
         AmountOfProtein = amountOfProtein;
         AmountOfSodium = amountOfSodium;
         AmountOfSugar = amountOfSugar;
+        AmountOfCholesterol = amountOfCholesterol;
         AmountOfCarbohydrates = amountOfCarbohydrates;
+        AmountOfMagnesium = amountOfMagnesium;
     }
 
     public int getId() {
@@ -64,6 +68,22 @@ public class FoodItem implements Serializable {
 
     public void setFoodTypeTitle(String foodTypeTitle) {
         FoodTypeTitle = foodTypeTitle;
+    }
+
+    public String getFoodShortDescription() {
+        return FoodShortDescription;
+    }
+
+    public void setFoodShortDescription(String foodShortDescription) {
+        FoodShortDescription = foodShortDescription;
+    }
+
+    public String getFoodDescription() {
+        return FoodDescription;
+    }
+
+    public void setFoodDescription(String foodDescription) {
+        FoodDescription = foodDescription;
     }
 
     public String getTitle() {
@@ -130,6 +150,14 @@ public class FoodItem implements Serializable {
         AmountOfSugar = amountOfSugar;
     }
 
+    public double getAmountOfCholesterol() {
+        return AmountOfCholesterol;
+    }
+
+    public void setAmountOfCholesterol(double amountOfCholesterol) {
+        AmountOfCholesterol = amountOfCholesterol;
+    }
+
     public double getAmountOfCarbohydrates() {
         return AmountOfCarbohydrates;
     }
@@ -138,19 +166,11 @@ public class FoodItem implements Serializable {
         AmountOfCarbohydrates = amountOfCarbohydrates;
     }
 
-    public String getFoodShortDescription() {
-        return FoodShortDescription;
+    public double getAmountOfMagnesium() {
+        return AmountOfMagnesium;
     }
 
-    public void setFoodShortDescription(String foodShortDescription) {
-        FoodShortDescription = foodShortDescription;
-    }
-
-    public String getFoodDescription() {
-        return FoodDescription;
-    }
-
-    public void setFoodDescription(String foodDescription) {
-        FoodDescription = foodDescription;
+    public void setAmountOfMagnesium(double amountOfMagnesium) {
+        AmountOfMagnesium = amountOfMagnesium;
     }
 }

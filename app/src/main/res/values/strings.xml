@@ -43,4 +43,11 @@
     <string name="amount_of_fat">Amount of fat</string>
     <string name="amount_of_fiber">Amount of fiber</string>
     <string name="amount_of_protein">Amount of protein</string>
+    <string name="food_details_with_gram">Food details in Amount of 100 grams</string>
+    <string name="amount_of_sodium">Amount of sodium</string>
+    <string name="amount_of_sugar">Amount of sugar</string>
+    <string name="amount_of_cholesterol">Amount of cholesterol</string>
+    <string name="amount_of_carbs">Amount of carbs</string>
+    <string name="dummy_full_description">Carbohydrates, often referred to as just “carbs,” are your body\'s primary energy source, and are a crucial part of any well-balanced diet. The three main types of carbohydrates are sugars, starches, and fiber.</string>
+    <string name="amount_of_magnesium">Amount of magnesium</string>
 </resources>
