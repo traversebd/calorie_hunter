@@ -55,4 +55,10 @@
     <string name="health_tips_list">Health Tips List</string>
     <string name="meal_plan_list">Meal Plan List</string>
     <string name="nutrition_tips_list">Nutrition Tips List</string>
+    <string name="total_calculated_items">Total calculated items</string>
+    <string name="last_calculation_date">Last calculation date</string>
+    <string name="result">Result</string>
+    <string name="calorie_result_sample">1800 Kcal</string>
+    <string name="activity_level">Activity Level</string>
+    <string name="activity_level_sample">Middle</string>
 </resources>
