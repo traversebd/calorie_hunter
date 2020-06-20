@@ -20,6 +20,7 @@
 
         <ImageView
             android:id="@+id/Icon"
+            android:src="@drawable/ic_meal_plan"
             android:layout_width="24dp"
             android:layout_gravity="center"
             android:layout_height="24dp"/>
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:text="@string/meal_plan"
             android:layout_gravity="center|left"
             android:gravity="center|left"
             android:textColor="@color/md_grey_800" />

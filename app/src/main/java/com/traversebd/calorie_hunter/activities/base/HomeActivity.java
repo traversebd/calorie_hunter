@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity {
                 .withMenuOpened(false)
                 .withContentClickableWhenMenuOpened(true)
                 .withSavedState(savedInstanceState)
-                .withMenuLayout(R.layout.menu_left_drawer)
+                .withMenuLayout(R.layout.layout_menu_left_drawer)
                 .inject();
         //endregion
 

@@ -52,4 +52,7 @@
     <string name="amount_of_magnesium">Amount of magnesium</string>
     <string name="your_result">Your Result</string>
     <string name="result_list">All Result List</string>
+    <string name="health_tips_list">Health Tips List</string>
+    <string name="meal_plan_list">Meal Plan List</string>
+    <string name="nutrition_tips_list">Nutrition Tips List</string>
 </resources>

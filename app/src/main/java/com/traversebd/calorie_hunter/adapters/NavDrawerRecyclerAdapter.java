@@ -42,7 +42,7 @@ public class NavDrawerRecyclerAdapter extends RecyclerView.Adapter<NavDrawerRecy
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final NavDrawer navDrawer = drawerList.get(position);
         holder.Title.setText(navDrawer.getTitle());
-        holder.Icon.setBackgroundResource(navDrawer.getIcon());
+        holder.Icon.setImageResource(navDrawer.getIcon());
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

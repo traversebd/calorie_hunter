@@ -1,9 +1,9 @@
 package com.traversebd.calorie_hunter.activities.mealplan;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 
@@ -28,7 +28,14 @@ public class MealPlanListActivity extends AppCompatActivity {
 
     //region perform all UI interactions
     private void bindUiWithComponents() {
-
+        //region back button
+        findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MealPlanListActivity.this,HomeActivity.class));
+            }
+        });
+        //endregion
     }
     //endregion
 

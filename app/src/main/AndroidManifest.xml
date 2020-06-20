@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.calculatecalorie.CalculateCalorieListActivity"></activity>
         <activity
             android:name=".activities.base.SplashActivity"
             android:screenOrientation="unspecified"
@@ -58,6 +57,10 @@
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.calculatecalorie.CalculateCalorieActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activities.calculatecalorie.CalculateCalorieListActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
