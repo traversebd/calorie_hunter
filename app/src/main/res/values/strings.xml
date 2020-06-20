@@ -50,4 +50,6 @@
     <string name="amount_of_carbs">Amount of carbs</string>
     <string name="dummy_full_description">Carbohydrates, often referred to as just “carbs,” are your body\'s primary energy source, and are a crucial part of any well-balanced diet. The three main types of carbohydrates are sugars, starches, and fiber.</string>
     <string name="amount_of_magnesium">Amount of magnesium</string>
+    <string name="your_result">Your Result</string>
+    <string name="result_list">All Result List</string>
 </resources>

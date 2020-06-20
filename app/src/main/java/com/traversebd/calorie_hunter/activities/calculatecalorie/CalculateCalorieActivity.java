@@ -10,5 +10,22 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_calorie);
+
+        //region init and bind all UI operations
+        initUI();
+        bindUiWithComponents();
+        //endregion
     }
+
+    //region all init operation
+    private void initUI() {
+
+    }
+    //endregion
+
+    //region perform al UI interactions
+    private void bindUiWithComponents() {
+
+    }
+    //endregion
 }

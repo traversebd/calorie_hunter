@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.calculatecalorie.CalculateCalorieListActivity"></activity>
         <activity
             android:name=".activities.base.SplashActivity"
-            android:theme="@style/AppThemeSplash"
-            android:screenOrientation="unspecified" >
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,48 +22,48 @@
         </activity>
         <activity
             android:name=".activities.nutritiontips.NutritionTipsDetailsActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.nutritiontips.NutritionTipsListActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.mealplan.NewMealPlanActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.mealplan.MealPlanListActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.healthtips.HaelthTipsDetailsActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.healthtips.HealthTipsListActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.fooditems.FoodDetailsActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified" />
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.fooditems.FoodListActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.calculatecalorie.CalorieResultActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.calculatecalorie.CalculateCalorieActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.base.HomeActivity"
-            android:theme="@style/AppThemeNoActionBar"
-            android:screenOrientation="unspecified"/>
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
     </application>
 
 </manifest>
