@@ -1,8 +1,11 @@
 package com.traversebd.calorie_hunter.activities.calculatecalorie;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 
 public class CalculateCalorieListActivity extends AppCompatActivity {
 
@@ -23,9 +26,17 @@ public class CalculateCalorieListActivity extends AppCompatActivity {
     }
     //endregion
 
-    //region perform al UI interactions
+    //region perform all UI interactions
     private void bindUiWithComponents() {
 
+    }
+    //endregion
+
+    //region activity components
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CalculateCalorieListActivity.this, HomeActivity.class));
     }
     //endregion
 }

@@ -23,7 +23,7 @@ public class CalorieResultActivity extends AppCompatActivity {
     }
     //endregion
 
-    //region perform al UI interactions
+    //region perform all UI interactions
     private void bindUiWithComponents() {
 
     }

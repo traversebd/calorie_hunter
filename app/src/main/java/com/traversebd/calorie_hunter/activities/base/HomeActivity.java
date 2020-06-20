@@ -10,8 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.calculatecalorie.CalculateCalorieListActivity;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodDetailsActivity;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
+import com.traversebd.calorie_hunter.activities.healthtips.HealthTipsListActivity;
+import com.traversebd.calorie_hunter.activities.mealplan.MealPlanListActivity;
+import com.traversebd.calorie_hunter.activities.nutritiontips.NutritionTipsListActivity;
 import com.traversebd.calorie_hunter.adapters.FoodRecyclerAdapter;
 import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
 import com.traversebd.calorie_hunter.db.food.FoodViewModel;
@@ -138,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, FoodListActivity.class).putExtra("foodType",4));
             }
         });
+        //endregion
     }
     //endregion
 
@@ -152,7 +157,21 @@ public class HomeActivity extends AppCompatActivity {
         drawerRecyclerAdapter.setOnItemClickListener(new NavDrawerRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(NavDrawer navDrawer) {
-
+                if (navDrawer.getTitle().equals(getString(R.string.meal_plan))){
+                    startActivity(new Intent(HomeActivity.this, MealPlanListActivity.class));
+                }
+                else if (navDrawer.getTitle().equals(getString(R.string.health_tips))){
+                    startActivity(new Intent(HomeActivity.this, HealthTipsListActivity.class));
+                }
+                else if (navDrawer.getTitle().equals(getString(R.string.nutrition_tips))){
+                    startActivity(new Intent(HomeActivity.this, NutritionTipsListActivity.class));
+                }
+                else if (navDrawer.getTitle().equals(getString(R.string.sleeping_tips))){
+                }
+                else if (navDrawer.getTitle().equals(getString(R.string.calculate_calorie))){
+                    startActivity(new Intent(HomeActivity.this, CalculateCalorieListActivity.class));
+                }
+                slidingRootNav.closeMenu();
             }
         });
         //endregion
