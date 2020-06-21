@@ -61,4 +61,8 @@
     <string name="calorie_result_sample">1800 Kcal</string>
     <string name="activity_level">Activity Level</string>
     <string name="activity_level_sample">Middle</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="height_in_cm">Height in CM</string>
 </resources>
