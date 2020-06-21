@@ -7,7 +7,7 @@
     android:background="@color/md_white_1000"
     tools:context=".activities.calculatecalorie.CalculateCalorieListActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/backLayout"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginLeft="24dp"
@@ -36,19 +37,41 @@
         </LinearLayout>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_toRightOf="@id/backLayout"
             android:text="@string/result_list"
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
             android:layout_marginTop="4dp"
             android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/md_white_1000"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentRight="true"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/a_roundbg"
+            android:translationZ="4dp">
+
+            <ImageView
+                android:id="@+id/CalculateCalorieButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_add"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/topBarLayout"

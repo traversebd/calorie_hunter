@@ -1,7 +1,9 @@
 package com.traversebd.calorie_hunter.activities.calculatecalorie;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import com.traversebd.calorie_hunter.R;
 
 public class CalculateCalorieActivity extends AppCompatActivity {
@@ -25,7 +27,14 @@ public class CalculateCalorieActivity extends AppCompatActivity {
 
     //region perform all UI interactions
     private void bindUiWithComponents() {
-
+        //region back button
+        findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CalculateCalorieActivity.this,CalculateCalorieListActivity.class));
+            }
+        });
+        //endregion
     }
     //endregion
 }

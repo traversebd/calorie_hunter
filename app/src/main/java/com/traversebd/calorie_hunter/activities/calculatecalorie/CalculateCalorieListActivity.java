@@ -36,6 +36,15 @@ public class CalculateCalorieListActivity extends AppCompatActivity {
             }
         });
         //endregion
+
+        //region back button
+        findViewById(R.id.CalculateCalorieButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CalculateCalorieListActivity.this,CalculateCalorieActivity.class));
+            }
+        });
+        //endregion
     }
     //endregion
 
