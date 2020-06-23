@@ -9,7 +9,7 @@
             <solid android:color="@color/md_white_1000" />
             <stroke
                 android:width="4dp"
-                android:color="@color/md_grey_300" />
+                android:color="@color/md_green_300" />
         </shape>
     </item>
 </layer-list>

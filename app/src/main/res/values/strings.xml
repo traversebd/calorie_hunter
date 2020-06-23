@@ -65,4 +65,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="height_in_cm">Height in CM</string>
+    <string name="weight_in_kg">Weight in Kg</string>
+    <string name="i_am">I am</string>
+    <string name="weight">Weight</string>
 </resources>
