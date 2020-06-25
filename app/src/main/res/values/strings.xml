@@ -68,4 +68,15 @@
     <string name="weight_in_kg">Weight in Kg</string>
     <string name="i_am">I am</string>
     <string name="weight">Weight</string>
+    <string name="age">Age is</string>
+    <string name="enter_your_age">Enter your age</string>
+    <string name="my_activity_level">My activity level</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="very_high">Very High</string>
+    <string name="first">1st</string>
+    <string name="second">2nd</string>
+    <string name="third">3rd</string>
+    <string name="fourth">4th</string>
 </resources>
