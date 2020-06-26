@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
@@ -230,11 +231,7 @@ public class UX {
         return valid;
     }
 
-    /**
-     * This method will perform custom dialog functionality
-     *
-     * @param layout,title,okListener
-     */
+    //region this method will perform custom dialog functionality/
     public View showDialog(int layout, String title, onDialogOkListener okListener) {
         final onDialogOkListener onDialogOkListener = okListener;
         final View modalView = View.inflate(context, layout, null);
@@ -263,5 +260,14 @@ public class UX {
         void onClick(DialogInterface dialog, int id);
     }
     //region end for custom dialog
+
+    //region set imageView height and width programmatically
+    private void setImageViewParam(ImageView[] imageViews, int height, int width){
+        for (int start = 0; start < imageViews.length; start++) {
+            imageViews[start].getLayoutParams().height = height;
+            imageViews[start].getLayoutParams().width = width;
+        }
+    }
+    //endregion
 
 }
