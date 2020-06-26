@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.calculatecalorie.CalculateCalorieActivity;
 import com.traversebd.calorie_hunter.activities.calculatecalorie.CalculateCalorieListActivity;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodDetailsActivity;
 import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
@@ -169,7 +170,7 @@ public class HomeActivity extends AppCompatActivity {
                 else if (navDrawer.getTitle().equals(getString(R.string.sleeping_tips))){
                 }
                 else if (navDrawer.getTitle().equals(getString(R.string.calculate_calorie))){
-                    startActivity(new Intent(HomeActivity.this, CalculateCalorieListActivity.class));
+                    startActivity(new Intent(HomeActivity.this, CalculateCalorieActivity.class));
                 }
                 slidingRootNav.closeMenu();
             }
