@@ -338,6 +338,7 @@
                     android:textSize="16sp"/>
 
                 <com.warkiz.widget.IndicatorSeekBar
+                    android:id="@+id/ActivityLevelSeekBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"

@@ -3,22 +3,42 @@ package com.traversebd.calorie_hunter.activities.calculatecalorie;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 import com.traversebd.calorie_hunter.db.calculatecalorie.CalorieViewModel;
+import com.warkiz.widget.IndicatorSeekBar;
+import com.warkiz.widget.OnSeekChangeListener;
+import com.warkiz.widget.SeekParams;
 
 public class CalculateCalorieActivity extends AppCompatActivity {
     private RelativeLayout maleLayout, femaleLayout;
     private TextView male,female;
     private ImageView maleIcon, femaleIcon;
     private Button calculateButton;
+    private EditText age;
+    private NumberPicker weight, height;
+    private IndicatorSeekBar activityLevelSeekBar;
+    private int heightInt, weightInt, ageInt, activityLevelId;
+    private String gender;
     private CalorieViewModel calorieViewModel;
+    private LinearLayout dialogLayout;
+    private Dialog itemDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +64,10 @@ public class CalculateCalorieActivity extends AppCompatActivity {
         maleIcon = findViewById(R.id.MaleIcon);
         femaleIcon = findViewById(R.id.FemaleIcon);
         calculateButton = findViewById(R.id.calculateButton);
+        age = findViewById(R.id.Age);
+        weight = findViewById(R.id.Weight);
+        height = findViewById(R.id.Height);
+        activityLevelSeekBar = findViewById(R.id.ActivityLevelSeekBar);
     }
     //endregion
 
@@ -62,13 +86,50 @@ public class CalculateCalorieActivity extends AppCompatActivity {
         maleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                gender = getString(R.string.male);
                 changeGender(getString(R.string.male));
             }
         });
         femaleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                gender = getString(R.string.female);
                 changeGender(getString(R.string.female));
+            }
+        });
+        //endregion
+
+        //region height and width number picker
+        height.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                heightInt = newVal;
+            }
+        });
+
+        weight.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                weightInt = newVal;
+            }
+        });
+        //endregion
+
+        //region activity level seekBar
+        activityLevelSeekBar.setOnSeekChangeListener(new OnSeekChangeListener() {
+            @Override
+            public void onSeeking(SeekParams seekParams) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(IndicatorSeekBar seekBar) {
+                activityLevelId = seekBar.getTickCount();
+            }
+
+            @Override
+            public void onStopTrackingTouch(IndicatorSeekBar seekBar) {
+
             }
         });
         //endregion
@@ -77,7 +138,12 @@ public class CalculateCalorieActivity extends AppCompatActivity {
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (validateData()){
+                    showDialog();
+                }
+                else{
+                    Toast.makeText(CalculateCalorieActivity.this, "Please check all field data", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         //endregion
@@ -103,6 +169,47 @@ public class CalculateCalorieActivity extends AppCompatActivity {
             maleIcon.setImageResource(R.drawable.ic_male_green);
             femaleIcon.setImageResource(R.drawable.ic_female_white);
         }
+    }
+    //endregion
+
+    //region validation
+    private boolean validateData(){
+        boolean isValid = false;
+        ageInt = Integer.parseInt(age.getText().toString());
+        if (ageInt !=0){
+            isValid = true;
+        }
+        if (heightInt !=0){
+            isValid = true;
+        }
+        if (weightInt !=0){
+            isValid = true;
+        }
+        if (activityLevelId !=0){
+            isValid = true;
+        }
+        if (!TextUtils.isEmpty(gender)){
+            isValid = true;
+        }
+        return isValid;
+    }
+    //endregion
+
+    //region show result dialog
+    private void showDialog() {
+        itemDialog = new Dialog(this);
+        itemDialog.setContentView(R.layout.dialog_calorie_result);
+        itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
+        dialogLayout.startAnimation(a);
+        itemDialog.show();
+    }
+    //endregion
+
+    //region back pressed
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(CalculateCalorieActivity.this, HomeActivity.class));
     }
     //endregion
 }

@@ -12,7 +12,6 @@ public class Calorie {
     private int HeightInCm;
     private int Age;
     private int ActivityLevelId;
-    private String ActivityLevel;
 
     public int getId() {
         return Id;
@@ -60,13 +59,5 @@ public class Calorie {
 
     public void setActivityLevelId(int activityLevelId) {
         ActivityLevelId = activityLevelId;
-    }
-
-    public String getActivityLevel() {
-        return ActivityLevel;
-    }
-
-    public void setActivityLevel(String activityLevel) {
-        ActivityLevel = activityLevel;
     }
 }

@@ -52,10 +52,6 @@
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".activities.calculatecalorie.CalorieResultActivity"
-            android:screenOrientation="unspecified"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
             android:name=".activities.calculatecalorie.CalculateCalorieActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
