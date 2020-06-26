@@ -79,4 +79,9 @@
     <string name="second">2nd</string>
     <string name="third">3rd</string>
     <string name="fourth">4th</string>
+    <string name="calculate">Calculate</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
 </resources>
