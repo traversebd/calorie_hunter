@@ -84,4 +84,15 @@
     <string name="two">2</string>
     <string name="three">3</string>
     <string name="four">4</string>
+    <string name="using_miffin_st_jeor_rule">Using Muffin-St Jeor</string>
+    <string name="total_calories_including_exercise">Total Calories Including Exercise</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="fat_loss">Fat Loss</string>
+    <string name="extreme_fat_loss">Extreme Fat Loss</string>
+    <string name="now_what">Now what?</string>
+    <string name="one_dot">1.</string>
+    <string name="two_dot">2.</string>
+    <string name="three_dot">3.</string>
+    <string name="four_dot">4.</string>
+    <string name="five_dot">5.</string>
 </resources>

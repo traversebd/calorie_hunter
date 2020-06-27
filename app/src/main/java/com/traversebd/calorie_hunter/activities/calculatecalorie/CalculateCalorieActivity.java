@@ -1,9 +1,8 @@
 package com.traversebd.calorie_hunter.activities.calculatecalorie;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,14 +13,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.NumberPicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.shawnlin.numberpicker.NumberPicker;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
-import com.traversebd.calorie_hunter.db.calculatecalorie.CalorieViewModel;
 import com.warkiz.widget.IndicatorSeekBar;
 import com.warkiz.widget.OnSeekChangeListener;
 import com.warkiz.widget.SeekParams;
@@ -36,18 +33,13 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     private IndicatorSeekBar activityLevelSeekBar;
     private int heightInt, weightInt, ageInt, activityLevelId;
     private String gender;
-    private CalorieViewModel calorieViewModel;
-    private LinearLayout dialogLayout;
+    private CardView dialogLayout;
     private Dialog itemDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate_calorie);
-
-        //region get viewModel
-        calorieViewModel = ViewModelProviders.of(this).get(CalorieViewModel.class);
-        //endregion
 
         //region init and bind all UI operations
         initUI();
@@ -175,20 +167,20 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     //region validation
     private boolean validateData(){
         boolean isValid = false;
-        ageInt = Integer.parseInt(age.getText().toString());
-        if (ageInt !=0){
+        if (!TextUtils.isEmpty(age.getText().toString())) {
+            ageInt = Integer.parseInt(age.getText().toString());
             isValid = true;
         }
-        if (heightInt !=0){
+        else if (heightInt !=0){
             isValid = true;
         }
-        if (weightInt !=0){
+        else if (weightInt !=0){
             isValid = true;
         }
-        if (activityLevelId !=0){
+        else if (activityLevelId !=0){
             isValid = true;
         }
-        if (!TextUtils.isEmpty(gender)){
+        else if (!TextUtils.isEmpty(gender)){
             isValid = true;
         }
         return isValid;
@@ -199,10 +191,17 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     private void showDialog() {
         itemDialog = new Dialog(this);
         itemDialog.setContentView(R.layout.dialog_calorie_result);
+        dialogInit();
         itemDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         Animation a = AnimationUtils.loadAnimation(itemDialog.getContext(), R.anim.push_up_in);
         dialogLayout.startAnimation(a);
         itemDialog.show();
+    }
+    //endregion
+
+    //region init all dialog components
+    private void dialogInit() {
+        dialogLayout = itemDialog.findViewById(R.id.dialogLayout);
     }
     //endregion
 
