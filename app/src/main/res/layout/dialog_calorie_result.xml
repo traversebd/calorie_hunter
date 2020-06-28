@@ -15,6 +15,7 @@
         app:cardCornerRadius="12dp"
         android:translationZ="4dp"
         app:cardUseCompatPadding="true"
+        android:layout_margin="4dp"
         app:elevation="16dp">
 
         <LinearLayout
@@ -115,6 +116,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/maintenanceCalorie"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/calorie_result_sample"
@@ -163,6 +165,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/fatLossCalorie"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/calorie_result_sample"
@@ -211,6 +214,7 @@
                             android:gravity="center">
 
                             <TextView
+                                android:id="@+id/extremeFatLossCalorie"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/calorie_result_sample"

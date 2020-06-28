@@ -26,7 +26,7 @@ import com.warkiz.widget.SeekParams;
 
 public class CalculateCalorieActivity extends AppCompatActivity {
     private RelativeLayout maleLayout, femaleLayout;
-    private TextView male,female;
+    private TextView male,female, maintenanceCalorie, fatLossCalorie, extremeFatLossCalorie;
     private ImageView maleIcon, femaleIcon;
     private Button calculateButton;
     private EditText age;
@@ -133,6 +133,9 @@ public class CalculateCalorieActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (validateData()){
                     showDialog();
+                    maintenanceCalorie.setText(""+calculateCalorie());
+                    fatLossCalorie.setText(""+calculateCalorie());
+                    extremeFatLossCalorie.setText(""+calculateCalorie());
                 }
                 else{
                     Toast.makeText(CalculateCalorieActivity.this, "Please check all field data", Toast.LENGTH_SHORT).show();
@@ -188,6 +191,21 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     }
     //endregion
 
+    //region calculate calorie
+    //Formula for male = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5
+    //Formula for female = 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161
+    private int calculateCalorie(){
+        int calorie = 0;
+        if (gender.equals(getString(R.string.male))){
+            calorie = (int) ((10 * weightInt) + (6.25 * heightInt) - (5 * ageInt) + 5);
+        }
+        else if (gender.equals(getString(R.string.female))){
+            calorie = (int) ((10 * weightInt) + (6.25 * heightInt) - (5 * ageInt) + 5) - 161;
+        }
+        return calorie;
+    }
+    //endregion
+
     //region show result dialog
     private void showDialog() {
         itemDialog = new Dialog(this);
@@ -203,6 +221,9 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     //region init all dialog components
     private void dialogInit() {
         dialogLayout = itemDialog.findViewById(R.id.dialogLayout);
+        maintenanceCalorie = itemDialog.findViewById(R.id.maintenanceCalorie);
+        fatLossCalorie = itemDialog.findViewById(R.id.fatLossCalorie);
+        extremeFatLossCalorie = itemDialog.findViewById(R.id.extremeFatLossCalorie);
     }
     //endregion
 
