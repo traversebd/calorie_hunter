@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class CalculateCalorieActivity extends AppCompatActivity {
     private IndicatorSeekBar activityLevelSeekBar;
     private int heightInt, weightInt, ageInt, activityLevelId;
     private String gender;
-    private CardView dialogLayout;
+    private LinearLayout dialogLayout;
     private Dialog itemDialog;
 
     @Override
