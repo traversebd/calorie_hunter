@@ -66,6 +66,9 @@ dependencies {
     //implementation 'com.github.channguyen:rsv:1.0.1'
     implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
 
+    //swipeAble scrollView
+    implementation 'com.yarolegovich:discrete-scrollview:1.4.9'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
