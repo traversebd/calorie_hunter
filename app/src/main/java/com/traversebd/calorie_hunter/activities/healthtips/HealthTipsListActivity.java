@@ -14,7 +14,7 @@ import com.yarolegovich.discretescrollview.transform.ScaleTransformer;
 import java.util.ArrayList;
 
 public class HealthTipsListActivity extends AppCompatActivity {
-    private DiscreteScrollView itemPicker;
+    private DiscreteScrollView healthTpsSlider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class HealthTipsListActivity extends AppCompatActivity {
 
     //region all init operation
     private void init() {
-        itemPicker = findViewById(R.id.healthTipsSlider);
+        healthTpsSlider = findViewById(R.id.healthTipsSlider);
     }
     //endregion
 
@@ -49,18 +49,18 @@ public class HealthTipsListActivity extends AppCompatActivity {
     //region set health tips slider type list
     private void setWalletAdapter(ArrayList<HealthTips> healthTips) {
         HealthTipsSliderAdapter sliderAdapter = new HealthTipsSliderAdapter(healthTips, this);
-        itemPicker.setAdapter(sliderAdapter);
+        healthTpsSlider.setAdapter(sliderAdapter);
         sliderAdapter.onItemClickListener(new HealthTipsSliderAdapter.onItemClick() {
             @Override
             public void itemClick(HealthTips healthTips) {
             }
         });
-        itemPicker.setItemTransformer(new ScaleTransformer.Builder()
+        healthTpsSlider.setItemTransformer(new ScaleTransformer.Builder()
                 .setMinScale(0.8f)
                 .build());
-        itemPicker.setSlideOnFling(false);
-        itemPicker.scrollToPosition(0);
-        itemPicker.setOverScrollEnabled(false);
+        healthTpsSlider.setSlideOnFling(false);
+        healthTpsSlider.scrollToPosition(0);
+        healthTpsSlider.setOverScrollEnabled(false);
     }
     //endregion
 

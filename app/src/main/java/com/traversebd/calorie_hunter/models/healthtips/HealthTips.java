@@ -1,7 +1,9 @@
 package com.traversebd.calorie_hunter.models.healthtips;
 
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+@Entity
 public class HealthTips {
     @PrimaryKey(autoGenerate = true)
     private int Id;

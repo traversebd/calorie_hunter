@@ -103,7 +103,7 @@
                 android:id="@+id/ReadMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_toLeftOf="@id/ReadMoreImgView"
                 android:layout_margin="4dp"
                 android:padding="4dp"
                 android:text="@string/read_more"
@@ -112,6 +112,17 @@
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/ReadMoreImgView"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_right_arrow_green"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:padding="4dp"/>
 
         </RelativeLayout>
 

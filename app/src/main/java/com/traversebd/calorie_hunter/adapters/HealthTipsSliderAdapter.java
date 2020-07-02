@@ -41,6 +41,18 @@ public class HealthTipsSliderAdapter extends RecyclerView.Adapter<HealthTipsSlid
     public void onBindViewHolder(SliderAdapterVH viewHolder, int position) {
         final HealthTips itemModel = healthTipsList.get(position);
 
+        viewHolder.CollectionDate.setText(itemModel.getCollectionDate());
+        viewHolder.ShortDescription.setText(itemModel.getShortDescription());
+        viewHolder.CurrentItem.setText(""+(position+1));
+        viewHolder.TotalCount.setText(""+healthTipsList.size());
+
+        //onClick listener
+        viewHolder.ReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
         //onClick listener
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +70,15 @@ public class HealthTipsSliderAdapter extends RecyclerView.Adapter<HealthTipsSlid
     public static class SliderAdapterVH extends RecyclerView.ViewHolder {
 
         View itemView;
-        TextView Title,Amount,TotalCost,Position, WalletType,ExpiresOn, TotalHeading, RemainingHeading;
+        TextView CollectionDate,ShortDescription,CurrentItem,TotalCount, ReadMore;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
+            CollectionDate = itemView.findViewById(R.id.CollectionDate);
+            ShortDescription = itemView.findViewById(R.id.ShortDescription);
+            CurrentItem = itemView.findViewById(R.id.CurrentItem);
+            TotalCount = itemView.findViewById(R.id.TotalCount);
+            ReadMore = itemView.findViewById(R.id.ReadMore);
             this.itemView = itemView;
         }
     }

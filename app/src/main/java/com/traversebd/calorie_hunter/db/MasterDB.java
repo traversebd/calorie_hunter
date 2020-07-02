@@ -10,15 +10,18 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.db.calculatecalorie.CalorieDao;
 import com.traversebd.calorie_hunter.db.food.FoodDao;
+import com.traversebd.calorie_hunter.db.healthtips.HealthTipsDao;
 import com.traversebd.calorie_hunter.models.calculatecalorie.Calorie;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
+import com.traversebd.calorie_hunter.models.healthtips.HealthTips;
 
-@Database(entities = {FoodItem.class, Calorie.class},version = 1)
+@Database(entities = {FoodItem.class, Calorie.class, HealthTips.class},version = 1)
 public abstract class MasterDB extends RoomDatabase {
     private static MasterDB masterDB;
 
     public abstract FoodDao foodDao();
     public abstract CalorieDao calorieDao();
+    public abstract HealthTipsDao healthTipsDao();
 
     //region get single-tone async task
     public static synchronized MasterDB getInstance(Context context){
