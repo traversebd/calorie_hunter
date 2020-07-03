@@ -14,12 +14,10 @@ import java.util.ArrayList;
 public class HealthTipsSliderAdapter extends RecyclerView.Adapter<HealthTipsSliderAdapter.SliderAdapterVH> {
 
     private ArrayList<HealthTips> healthTipsList;
-    private Context context;
     private onItemClick onItemClick;
 
-    public HealthTipsSliderAdapter(ArrayList<HealthTips> healthTipsList, Context context) {
+    public HealthTipsSliderAdapter(ArrayList<HealthTips> healthTipsList) {
         this.healthTipsList = healthTipsList;
-        this.context = context;
     }
 
     public void onItemClickListener(onItemClick onItemClick){

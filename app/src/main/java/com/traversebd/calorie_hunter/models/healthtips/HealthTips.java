@@ -13,6 +13,17 @@ public class HealthTips {
     private String Description;
     private String DetailsTips;
 
+    public HealthTips() {
+    }
+
+    public HealthTips(String title, String collectionDate, String shortDescription, String description, String detailsTips) {
+        Title = title;
+        CollectionDate = collectionDate;
+        ShortDescription = shortDescription;
+        Description = description;
+        DetailsTips = detailsTips;
+    }
+
     public int getId() {
         return Id;
     }

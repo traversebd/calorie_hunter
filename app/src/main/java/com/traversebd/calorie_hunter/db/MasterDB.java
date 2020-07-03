@@ -40,20 +40,23 @@ public abstract class MasterDB extends RoomDatabase {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
-            new PopulateFoodAsyncTask(masterDB).execute();
+            new PopulateDataAsyncTask(masterDB).execute();
         }
     };
     //endregion
 
     //region add some dummy food async task
-    private static class PopulateFoodAsyncTask extends AsyncTask<Void,Void,Void> {
+    private static class PopulateDataAsyncTask extends AsyncTask<Void,Void,Void> {
         FoodDao foodDao;
-        public PopulateFoodAsyncTask(MasterDB masterDB) {
+        HealthTipsDao healthTipsDao;
+        public PopulateDataAsyncTask(MasterDB masterDB) {
             foodDao = masterDB.foodDao();
+            healthTipsDao = masterDB.healthTipsDao();
         }
 
         @Override
         protected Void doInBackground(Void... voids) {
+            //region add food item
             foodDao.insert(new FoodItem(1,"Breakfast","Egg Boiled","Food is any substance consumed to provide nutritional support for an organism.",
                     "This oily fish, known for its bright pink color, is rich not only in healthy protein but also in omega-3 fatty acids, which benefit both your heart and your brain.",
                     R.drawable.ic_egg,155,11,0,13,124,1.1,112,1.1,12));
@@ -90,6 +93,31 @@ public abstract class MasterDB extends RoomDatabase {
             foodDao.insert(new FoodItem(4,"Dinner","Chicken BBQ Pizza","Food is any substance consumed to provide nutritional support for an organism.",
                     "This oily fish, known for its bright pink color, is rich not only in healthy protein but also in omega-3 fatty acids, which benefit both your heart and your brain.",
                     R.drawable.ic_bbq_pizza,275.9,11.4,5.1,12.3,1122.1,4.1,112,28.5,19));
+            //endregion
+
+            //region add health tips list
+            healthTipsDao.insert(new HealthTips("Eat a variety of foods ","22-Jun-2020","For good health, we need more than 40 different nutrients, " +
+                    "and no single food can supply them all.","For good health, we need more than 40 different nutrients, and no single food can supply them all. " +
+                    "It is not about a single meal, it is about a balanced food choice over time that will make a difference!",
+                    "A high-fat lunch could be followed by a low-fat dinner.After a large meat portion at dinner, perhaps fish should be the next day’s choice?"));
+            healthTipsDao.insert(new HealthTips("Reduce salt and sugar intake","20-Aug-2019","A high salt intake can result in high blood pressure, and " +
+                    "increase the risk of cardiovascular disease.","A high salt intake can result in high blood pressure, and increase the risk of cardiovascular disease. " +
+                    "There are different ways to reduce salt in the diet",
+                    "When shopping, we could choose products with lower sodium content.When cooking, salt can be substituted with spices, increasing the variety of flavours and tastes."));
+            healthTipsDao.insert(new HealthTips("Eat regularly, control the portion size","10-Sep-2019","Eating a variety of foods, regularly, and in the right amounts" +
+                    " is the best formula for a healthy diet.","Paying attention to portion size will help us not to consume too much calories, and will allow us to eat all the foods we enjoy, " +
+                    "without having to eliminate any.","Cooking the right amount makes it easier to not overeat.Some reasonable serving sizes are: 100 g of meat; one medium piece of fruit; " +
+                    "half a cup of raw pasta."));
+            healthTipsDao.insert(new HealthTips("Drink plenty of fluids","02-July-2020","Adults need to drink at least 1.5 litres of fluid a day!",
+                    "Water is the best source, of course, and we can use tap or mineral water, sparkling or non-sparkling, plain or flavoured. Fruit juices, " +
+                            "tea, soft drinks, milk and other drinks, can all be okay - from time to time.","It's important for your body to have plenty of fluids each day." +
+                    "Water helps you digest your food, absorb nutrients from food, and then get rid of the unused waste."));
+            healthTipsDao.insert(new HealthTips("Maintain a healthy body weight","08-May-2019","The right weight for each us depends on factors like our " +
+                    "gender, height, age, and genes.","The right weight for each us depends on factors like our gender, height, age, and genes. Being affected by obesity and " +
+                    "overweight increases the risks of a wide range of diseases, including diabetes, heart diseases, and cancer.",
+                    "Excess body fat comes from eating more than we need.The extra calories can come from any caloric nutrient - " +
+                            "protein, fat, carbohydrate, or alcohol, but fat is the most concentrated source of energy."));
+            //endregion
             return null;
         }
 

@@ -18,9 +18,9 @@ public class FoodRepository {
     }
 
     //region all operations
-    public void insert(FoodItem foodItem){ new InsertAsyncTask(foodDao).execute(foodItem); };
-    public void update(FoodItem foodItem){ new UpdateAsyncTask(foodDao).execute(foodItem); };
-    public void delete(FoodItem foodItem){ new DeleteAsyncTask(foodDao).execute(foodItem); };
+    public void insert(FoodItem foodItem){ new InsertAsyncTask(foodDao).execute(foodItem); }
+    public void update(FoodItem foodItem){ new UpdateAsyncTask(foodDao).execute(foodItem); }
+    public void delete(FoodItem foodItem){ new DeleteAsyncTask(foodDao).execute(foodItem); }
     public LiveData<List<FoodItem>> getAllFoodItems(){return allItems;};
     //endregion
 
