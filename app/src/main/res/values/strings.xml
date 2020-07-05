@@ -33,7 +33,7 @@
     <string name="coffee">Coffee</string>
     <string name="biryani">Biryani</string>
     <string name="description">Description</string>
-    <string name="short_dummy_description">Biryani is full of ingrediants which attracts its good lover.</string>
+    <string name="short_dummy_description">This is a short dummy description which will be used by any components which need a simple and short description.</string>
     <string name="calorie_sample_hint">420</string>
     <string name="kcal">Kcal</string>
     <string name="zero">0</string>
@@ -99,4 +99,8 @@
     <string name="read_more">Read More</string>
     <string name="slash">/</string>
     <string name="all_items">All Items</string>
+    <string name="long_description">The property animation system is a robust framework that allows you to animate almost anything.
+        You can define an animation to change any object property over time, regardless of whether it draws to the screen or not.
+        You can also specify whether you want the animation to play back in reverse.</string>
+    <string name="icon_click_listen">Click the icon to listen</string>
 </resources>
