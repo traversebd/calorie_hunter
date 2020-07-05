@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="16dp"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
@@ -35,25 +36,27 @@
 
         <TextView
             android:id="@+id/ShortDescription"
-            android:layout_width="match_parent"
+            android:layout_width="176dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:padding="4dp"
             android:text="@string/short_dummy_description"
             android:textColor="@color/md_green_900"
             android:textStyle="bold"
-            android:maxLines="2"
+            android:maxLines="3"
             android:ellipsize="end"
             android:textSize="16sp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="112dp">
+            android:layout_marginTop="144dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_centerVertical="true"
                 android:orientation="horizontal">
 
                 <TextView
@@ -61,7 +64,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="4dp"
                     android:padding="4dp"
                     android:text="@string/one"
                     android:textColor="@color/md_green_900"
@@ -74,7 +76,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="4dp"
                     android:padding="4dp"
                     android:text="@string/slash"
                     android:textColor="@color/md_green_900"
@@ -88,7 +89,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="4dp"
                     android:padding="4dp"
                     android:text="@string/four"
                     android:textColor="@color/md_green_900"
@@ -100,11 +100,13 @@
             </LinearLayout>
 
             <TextView
+                android:visibility="visible"
                 android:id="@+id/ReadMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/ReadMoreImgView"
-                android:layout_margin="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
                 android:padding="4dp"
                 android:text="@string/read_more"
                 android:textColor="@color/md_green_900"
@@ -114,6 +116,7 @@
                 android:textSize="16sp"/>
 
             <ImageView
+                android:visibility="visible"
                 android:id="@+id/ReadMoreImgView"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -122,7 +125,9 @@
                 android:layout_centerVertical="true"
                 android:layout_marginTop="4dp"
                 android:layout_marginRight="4dp"
-                android:padding="4dp"/>
+                android:paddingRight="4dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
 
         </RelativeLayout>
 
