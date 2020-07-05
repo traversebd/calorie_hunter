@@ -73,6 +73,7 @@ public class HealthTipsListActivity extends AppCompatActivity {
         sliderAdapter.onItemClickListener(new HealthTipsSliderAdapter.onItemClick() {
             @Override
             public void itemClick(HealthTips healthTips) {
+                startActivity(new Intent(HealthTipsListActivity.this,HealthTipsDetailsActivity.class));
             }
         });
         healthTpsSlider.setItemTransformer(new ScaleTransformer.Builder()

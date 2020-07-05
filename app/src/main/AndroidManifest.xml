@@ -36,7 +36,7 @@
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".activities.healthtips.HaelthTipsDetailsActivity"
+            android:name=".activities.healthtips.HealthTipsDetailsActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
