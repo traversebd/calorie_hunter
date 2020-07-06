@@ -142,10 +142,10 @@
                 android:orientation="vertical">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/allFoodRecycler"
+                    android:id="@+id/allHealthTipsRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:listitem="@layout/adapter_recycler_all_food_list"
+                    tools:listitem="@layout/adapter_recycler_health_tips_details_list"
                     app:spanCount="1"
                     android:orientation="vertical"/>
 

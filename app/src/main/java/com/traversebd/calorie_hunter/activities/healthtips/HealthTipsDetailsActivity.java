@@ -2,6 +2,7 @@ package com.traversebd.calorie_hunter.activities.healthtips;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.Build;
@@ -21,6 +22,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
     private TextView listenHint,collectionDate, description, shortDescription;
     private TextToSpeech textToSpeech;
     private boolean isTextToSpeechOn = false;
+    private RecyclerView allHealthTipsRecycler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
     private void init() {
         listenIcon = findViewById(R.id.listenIcon);
         listenHint = findViewById(R.id.listenHint);
+        allHealthTipsRecycler = findViewById(R.id.allHealthTipsRecycler);
         collectionDate = findViewById(R.id.CollectionDate);
         shortDescription = findViewById(R.id.ShortDescription);
         description = findViewById(R.id.Description);
@@ -105,6 +108,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
     }
     //endregion
 
+    //region text to speech speak for different api level
     @SuppressWarnings("deprecation")
     private void ttsUnder20(String text) {
         HashMap<String, String> map = new HashMap<>();
@@ -117,6 +121,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
         String utteranceId = this.hashCode() + "";
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
     }
+    //endregion
 
     //region activity components
     @Override
