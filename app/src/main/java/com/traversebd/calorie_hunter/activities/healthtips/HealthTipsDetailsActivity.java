@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
@@ -22,11 +23,12 @@ import java.util.Locale;
 public class HealthTipsDetailsActivity extends AppCompatActivity {
 
     private ImageView listenIcon;
-    private TextView listenHint,collectionDate, description, shortDescription;
+    private TextView collectionDate, description, shortDescription;
     private TextToSpeech textToSpeech;
     private boolean isTextToSpeechOn = false;
     private RecyclerView allHealthTipsRecycler;
     private HealthTips healthTips;
+    private LinearLayout detailsTipsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +56,11 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
     //region all init operation
     private void init() {
         listenIcon = findViewById(R.id.listenIcon);
-        listenHint = findViewById(R.id.listenHint);
         allHealthTipsRecycler = findViewById(R.id.detailTipsRecycler);
         collectionDate = findViewById(R.id.CollectionDate);
         shortDescription = findViewById(R.id.ShortDescription);
         description = findViewById(R.id.Description);
+        detailsTipsLayout = findViewById(R.id.detailsTipsLayout);
     }
     //endregion
 
@@ -94,7 +96,12 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region call detailed recycler adapter
-        setDetailsRecycler();
+        if (getCommaSeparatedItems() != null && getCommaSeparatedItems().length > 0) {
+            setDetailsRecycler();
+        }
+        else{
+            detailsTipsLayout.setVisibility(View.GONE);
+        }
         //endregion
     }
     //endregion
@@ -113,7 +120,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
         String[] extraDetails = null;
 
         if (healthTips.getDetailsTips() != null){
-            extraDetails = healthTips.getDetailsTips().split(".");
+            extraDetails = healthTips.getDetailsTips().split(";");
         }
         return extraDetails;
     }
@@ -135,9 +142,7 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
             } else {
                 ttsUnder20(text);
             }
-            listenIcon.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_stop));
-            listenHint.setText(getString(R.string.tap_again_to_stop));
-            listenIcon.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_record_voice_over));
+            listenIcon.setImageResource(R.drawable.ic_stop);
             isTextToSpeechOn = true;
             Toast.makeText(getApplicationContext(), "Text to Speech Started", Toast.LENGTH_SHORT).show();
         }

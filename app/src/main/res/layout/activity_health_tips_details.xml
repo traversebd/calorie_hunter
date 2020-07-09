@@ -7,7 +7,7 @@
     android:background="@color/md_white_1000"
     tools:context=".activities.fooditems.FoodListActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/backArrowLayout"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginLeft="24dp"
@@ -37,19 +38,43 @@
 
         <TextView
             android:id="@+id/toolbarTitle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_toRightOf="@id/backArrowLayout"
             android:text="@string/health_tips"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginTop="4dp"
             android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerVertical="true"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/md_green_900"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentRight="true"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/a_roundbg"
+            android:translationZ="4dp">
+
+            <ImageView
+                android:id="@+id/listenIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_record_voice_over"
+                android:padding="4dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
@@ -63,41 +88,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginRight="24dp"
-                android:layout_marginTop="8dp">
-
-                <TextView
-                    android:id="@+id/listenHint"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_click_listen"
-                    android:textColor="@color/md_green_800"
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"
-                    android:visibility="visible"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:paddingRight="4dp"
-                    android:textSize="14sp"/>
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/listenIcon"
-                    android:clickable="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8dp"
-                    android:tint="@color/md_green_600"
-                    android:src="@drawable/ic_record_voice_over"
-                    app:backgroundTint="@color/white_transparent"
-                    app:fabSize="mini" />
-
-            </RelativeLayout>
 
             <TextView
                 android:id="@+id/CollectionDate"
@@ -137,6 +127,7 @@
                 android:layout_marginRight="24dp"/>
 
             <LinearLayout
+                android:id="@+id/detailsTipsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
