@@ -2,9 +2,10 @@ package com.traversebd.calorie_hunter.models.healthtips;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.io.Serializable;
 
 @Entity
-public class HealthTips {
+public class HealthTips implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int Id;
     private String Title;

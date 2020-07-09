@@ -103,6 +103,9 @@
                 android:id="@+id/CollectionDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_calendar_date"
+                android:drawableTint="@color/md_green_900"
+                android:drawablePadding="4dp"
                 android:text="@string/date_hint"
                 android:textColor="@color/md_green_900"
                 android:textSize="20sp"
@@ -136,15 +139,29 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/details_tips"
+                    android:paddingBottom="4dp"
+                    android:paddingTop="4dp"
+                    android:textSize="18sp"
+                    android:drawableLeft="@drawable/ic_detailed_info"
+                    android:drawableTint="@color/md_blue_grey_900"
+                    android:drawablePadding="4dp"
+                    android:textColor="@color/md_blue_grey_900"/>
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/allHealthTipsRecycler"
+                    android:id="@+id/detailTipsRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     tools:listitem="@layout/adapter_recycler_health_tips_details_list"
                     app:spanCount="1"
                     android:orientation="vertical"/>

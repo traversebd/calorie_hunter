@@ -103,4 +103,6 @@
         You can define an animation to change any object property over time, regardless of whether it draws to the screen or not.
         You can also specify whether you want the animation to play back in reverse.</string>
     <string name="icon_click_listen">Click the icon to listen</string>
+    <string name="details_tips">Details Tips</string>
+    <string name="tap_again_to_stop">Tap the icon again to stop speech.</string>
 </resources>

@@ -2,6 +2,7 @@ package com.traversebd.calorie_hunter.activities.healthtips;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -13,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.adapters.HealthDetailTipsAdapter;
+import com.traversebd.calorie_hunter.models.healthtips.HealthTips;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -23,11 +26,16 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
     private TextToSpeech textToSpeech;
     private boolean isTextToSpeechOn = false;
     private RecyclerView allHealthTipsRecycler;
+    private HealthTips healthTips;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_tips_details);
+
+        //region load extra data
+        loadTips();
+        //endregion
 
         //region init and bind all UI operations
         init();
@@ -35,11 +43,19 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
         //endregion
     }
 
+    //region load data from intent
+    private void loadTips(){
+        if (getIntent().getSerializableExtra("tips") != null){
+            healthTips = (HealthTips) getIntent().getSerializableExtra("tips");
+        }
+    }
+    //endregion
+
     //region all init operation
     private void init() {
         listenIcon = findViewById(R.id.listenIcon);
         listenHint = findViewById(R.id.listenHint);
-        allHealthTipsRecycler = findViewById(R.id.allHealthTipsRecycler);
+        allHealthTipsRecycler = findViewById(R.id.detailTipsRecycler);
         collectionDate = findViewById(R.id.CollectionDate);
         shortDescription = findViewById(R.id.ShortDescription);
         description = findViewById(R.id.Description);
@@ -76,12 +92,30 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
             }
         });
         //endregion
+
+        //region call detailed recycler adapter
+        setDetailsRecycler();
+        //endregion
+    }
+    //endregion
+
+    //region set recycler for details tips
+    private void setDetailsRecycler(){
+        HealthDetailTipsAdapter detailTipsAdapter = new HealthDetailTipsAdapter(getCommaSeparatedItems());
+        allHealthTipsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        allHealthTipsRecycler.setAdapter(detailTipsAdapter);
+        detailTipsAdapter.notifyDataSetChanged();
     }
     //endregion
 
     //region comma separated tips item
-    private void getCommaSeparatedItems(){
+    private String[] getCommaSeparatedItems(){
+        String[] extraDetails = null;
 
+        if (healthTips.getDetailsTips() != null){
+            extraDetails = healthTips.getDetailsTips().split(".");
+        }
+        return extraDetails;
     }
     //endregion
 
@@ -101,6 +135,8 @@ public class HealthTipsDetailsActivity extends AppCompatActivity {
             } else {
                 ttsUnder20(text);
             }
+            listenIcon.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_stop));
+            listenHint.setText(getString(R.string.tap_again_to_stop));
             listenIcon.setImageDrawable(ContextCompat.getDrawable(this,R.drawable.ic_record_voice_over));
             isTextToSpeechOn = true;
             Toast.makeText(getApplicationContext(), "Text to Speech Started", Toast.LENGTH_SHORT).show();
