@@ -40,7 +40,6 @@ public class MealPlanListActivity extends AppCompatActivity {
     //endregion
 
     //region activity components
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(MealPlanListActivity.this, HomeActivity.class));
