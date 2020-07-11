@@ -1,11 +1,12 @@
 package com.traversebd.calorie_hunter.models.mealplan;
 
 import androidx.room.Dao;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
 import java.util.List;
 
-@Dao
+@Entity
 public class MealPlan {
     @PrimaryKey(autoGenerate = true)
     private int Id;

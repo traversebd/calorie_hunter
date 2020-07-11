@@ -81,6 +81,7 @@ public class FoodListActivity extends AppCompatActivity {
     }
     //endregion
 
+    //region set food recycler
     private void setFoodRecycler() {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.allFoodRecycler);
         recyclerView.setLayoutManager(new VegaLayoutManager());
