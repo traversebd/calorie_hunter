@@ -21,4 +21,7 @@ public interface FoodDao {
 
     @Query("select * from FoodItem order by Id desc")
     LiveData<List<FoodItem>> getAllFoodItems();
+
+    @Query("select * from FoodItem where Id = :id limit 1")
+    FoodItem getSingleItem(int id);
 }

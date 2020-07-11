@@ -1,6 +1,6 @@
 package com.traversebd.calorie_hunter.models.mealplan;
 
-import androidx.room.Dao;
+import androidx.lifecycle.LiveData;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
@@ -13,18 +13,16 @@ public class MealPlan {
     private String DayOfWeek;
     private int IconRes;
     private String FoodType;
-    private double TotalCalorie;
-    private List<FoodItem> FoodItems;
+    private String FoodItems;
+    private List<FoodItem> FoodItemList;
 
     public MealPlan() {
     }
 
-    public MealPlan(int id, String dayOfWeek, int iconRes, String foodType, double totalCalorie, List<FoodItem> foodItems) {
-        Id = id;
+    public MealPlan(String dayOfWeek, int iconRes, String foodType, String foodItems) {
         DayOfWeek = dayOfWeek;
         IconRes = iconRes;
         FoodType = foodType;
-        TotalCalorie = totalCalorie;
         FoodItems = foodItems;
     }
 
@@ -60,19 +58,19 @@ public class MealPlan {
         FoodType = foodType;
     }
 
-    public double getTotalCalorie() {
-        return TotalCalorie;
-    }
-
-    public void setTotalCalorie(double totalCalorie) {
-        TotalCalorie = totalCalorie;
-    }
-
-    public List<FoodItem> getFoodItems() {
+    public String getFoodItems() {
         return FoodItems;
     }
 
-    public void setFoodItems(List<FoodItem> foodItems) {
+    public void setFoodItems(String foodItems) {
         FoodItems = foodItems;
+    }
+
+    public List<FoodItem> getFoodItemList() {
+        return FoodItemList;
+    }
+
+    public void setFoodItemList(List<FoodItem> foodItemList) {
+        FoodItemList = foodItemList;
     }
 }

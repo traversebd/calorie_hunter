@@ -11,6 +11,7 @@ import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.db.calculatecalorie.CalorieDao;
 import com.traversebd.calorie_hunter.db.food.FoodDao;
 import com.traversebd.calorie_hunter.db.healthtips.HealthTipsDao;
+import com.traversebd.calorie_hunter.db.mealplan.MealPlanDao;
 import com.traversebd.calorie_hunter.models.calculatecalorie.Calorie;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
 import com.traversebd.calorie_hunter.models.healthtips.HealthTips;
@@ -23,6 +24,7 @@ public abstract class MasterDB extends RoomDatabase {
     public abstract FoodDao foodDao();
     public abstract CalorieDao calorieDao();
     public abstract HealthTipsDao healthTipsDao();
+    public abstract MealPlanDao mealPlanDao();
 
     //region get single-tone async task
     public static synchronized MasterDB getInstance(Context context){
@@ -50,9 +52,12 @@ public abstract class MasterDB extends RoomDatabase {
     private static class PopulateDataAsyncTask extends AsyncTask<Void,Void,Void> {
         FoodDao foodDao;
         HealthTipsDao healthTipsDao;
+        MealPlanDao mealPlanDao;
+
         public PopulateDataAsyncTask(MasterDB masterDB) {
             foodDao = masterDB.foodDao();
             healthTipsDao = masterDB.healthTipsDao();
+            mealPlanDao = masterDB.mealPlanDao();
         }
 
         @Override
@@ -118,6 +123,16 @@ public abstract class MasterDB extends RoomDatabase {
                     "overweight increases the risks of a wide range of diseases, including diabetes, heart diseases, and cancer.",
                     "Excess body fat comes from eating more than we need.The extra calories can come from any caloric nutrient - " +
                             "protein, fat, carbohydrate, or alcohol.;Fat is the most concentrated source of energy."));
+            //endregion
+
+            //insert meal plan list items
+            mealPlanDao.insert(new MealPlan("Saturday",0,"Breakfast","1,2"));
+            mealPlanDao.insert(new MealPlan("Sunday",0,"Lunch","2,3"));
+            mealPlanDao.insert(new MealPlan("Monday",0,"Dinner","3,4"));
+            mealPlanDao.insert(new MealPlan("Tuesday",0,"Breakfast","4,3"));
+            mealPlanDao.insert(new MealPlan("Wednesday",0,"Lunch","5,6"));
+            mealPlanDao.insert(new MealPlan("Thursday",0,"Dinner","6,7"));
+            mealPlanDao.insert(new MealPlan("Friday",0,"Breakfast","2,3,4"));
             //endregion
             return null;
         }

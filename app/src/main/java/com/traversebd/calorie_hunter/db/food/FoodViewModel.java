@@ -23,6 +23,7 @@ public class FoodViewModel extends AndroidViewModel {
     public void insert(FoodItem foodItem){foodRepository.insert(foodItem);}
     public void update(FoodItem foodItem){foodRepository.update(foodItem);}
     public void delete(FoodItem foodItem){foodRepository.delete(foodItem);}
+    public FoodItem getFoodItem(int id){return foodRepository.getSingleFoodItem(id);}
     public LiveData<List<FoodItem>> getAllFoodItems(){return allItems;}
     //endregion
 }
