@@ -14,10 +14,11 @@ public class MealPlanViewModel extends AndroidViewModel {
     public MealPlanViewModel(@NonNull Application application) {
         super(application);
         repository = new MealPlanRepository(application);
+        allMealPlans = repository.getAllFoodItems();
     }
 
     //region all db operations
     public void insert(MealPlan mealPlan){repository.insert(mealPlan);}
-    public LiveData<List<MealPlan>> getAllFoodItems(){return allMealPlans;}
+    public LiveData<List<MealPlan>> getAllMealPlans(){return allMealPlans;}
     //endregion
 }

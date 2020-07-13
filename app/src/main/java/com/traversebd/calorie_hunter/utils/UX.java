@@ -43,6 +43,7 @@ public class UX {
 
     public UX(Context context) {
         this.context = context;
+        loadingDialog = new Dialog(context);
     }
 
     /**

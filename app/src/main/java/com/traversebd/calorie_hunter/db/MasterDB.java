@@ -126,13 +126,13 @@ public abstract class MasterDB extends RoomDatabase {
             //endregion
 
             //insert meal plan list items
-            mealPlanDao.insert(new MealPlan("Saturday",0,"Breakfast","1,2"));
-            mealPlanDao.insert(new MealPlan("Sunday",0,"Lunch","2,3"));
-            mealPlanDao.insert(new MealPlan("Monday",0,"Dinner","3,4"));
-            mealPlanDao.insert(new MealPlan("Tuesday",0,"Breakfast","4,3"));
-            mealPlanDao.insert(new MealPlan("Wednesday",0,"Lunch","5,6"));
-            mealPlanDao.insert(new MealPlan("Thursday",0,"Dinner","6,7"));
-            mealPlanDao.insert(new MealPlan("Friday",0,"Breakfast","2,3,4"));
+            mealPlanDao.insert(new MealPlan("Saturday",0,"Breakfast","1;2"));
+            mealPlanDao.insert(new MealPlan("Sunday",0,"Lunch","2;3"));
+            mealPlanDao.insert(new MealPlan("Monday",0,"Dinner","3;4"));
+            mealPlanDao.insert(new MealPlan("Tuesday",0,"Breakfast","4;3"));
+            mealPlanDao.insert(new MealPlan("Wednesday",0,"Lunch","5;6"));
+            mealPlanDao.insert(new MealPlan("Thursday",0,"Dinner","6;7"));
+            mealPlanDao.insert(new MealPlan("Friday",0,"Breakfast","2;3;4"));
             //endregion
             return null;
         }

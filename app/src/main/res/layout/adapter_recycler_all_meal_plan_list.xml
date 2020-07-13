@@ -99,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:scrollHorizontally="true"
                     android:text="@string/short_dummy_description"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"

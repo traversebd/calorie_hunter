@@ -1,29 +1,14 @@
 package com.traversebd.calorie_hunter.models.mealplan;
 
-import androidx.lifecycle.LiveData;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
 import java.util.List;
 
-@Entity
-public class MealPlan {
-    @PrimaryKey(autoGenerate = true)
+public class CustomMealPlanList {
     private int Id;
     private String DayOfWeek;
     private int IconRes;
     private String FoodType;
-    private String FoodItems;
-
-    public MealPlan() {
-    }
-
-    public MealPlan(String dayOfWeek, int iconRes, String foodType, String foodItems) {
-        DayOfWeek = dayOfWeek;
-        IconRes = iconRes;
-        FoodType = foodType;
-        FoodItems = foodItems;
-    }
+    private List<FoodItem> AllFoodItems;
 
     public int getId() {
         return Id;
@@ -57,11 +42,11 @@ public class MealPlan {
         FoodType = foodType;
     }
 
-    public String getFoodItems() {
-        return FoodItems;
+    public List<FoodItem> getAllFoodItems() {
+        return AllFoodItems;
     }
 
-    public void setFoodItems(String foodItems) {
-        FoodItems = foodItems;
+    public void setAllFoodItems(List<FoodItem> allFoodItems) {
+        AllFoodItems = allFoodItems;
     }
 }
