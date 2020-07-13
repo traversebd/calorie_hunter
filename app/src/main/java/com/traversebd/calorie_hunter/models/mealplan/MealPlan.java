@@ -1,10 +1,7 @@
 package com.traversebd.calorie_hunter.models.mealplan;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import com.traversebd.calorie_hunter.models.food.FoodItem;
-import java.util.List;
 
 @Entity
 public class MealPlan {
