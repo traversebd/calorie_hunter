@@ -28,7 +28,7 @@
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".activities.mealplan.NewMealPlanActivity"
+            android:name=".activities.mealplan.MealPlanDetailsActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity

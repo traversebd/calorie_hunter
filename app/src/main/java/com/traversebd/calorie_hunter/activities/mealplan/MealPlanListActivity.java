@@ -80,6 +80,15 @@ public class MealPlanListActivity extends AppCompatActivity {
         MealPlanListAdapter adapter = new MealPlanListAdapter(customMealPlanLists);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+        //region recycler item click listener
+        adapter.setOnItemClickListener(new MealPlanListAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick(CustomMealPlanList mealPlan) {
+                startActivity(new Intent(MealPlanListActivity.this, MealPlanDetailsActivity.class).putExtra("mealPlan",mealPlan));
+            }
+        });
+        //endregion
     }
     //endregion
 

@@ -1,9 +1,10 @@
 package com.traversebd.calorie_hunter.models.mealplan;
 
 import com.traversebd.calorie_hunter.models.food.FoodItem;
+import java.io.Serializable;
 import java.util.List;
 
-public class CustomMealPlanList {
+public class CustomMealPlanList implements Serializable {
     private int Id;
     private String DayOfWeek;
     private int IconRes;

@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
@@ -14,9 +15,18 @@ import java.util.List;
 
 public class MealPlanListAdapter extends RecyclerView.Adapter<MealPlanListAdapter.ViewHolder> {
     private ArrayList<CustomMealPlanList> allItems;
+    private onItemClickListener onItemClickListener;
 
     public MealPlanListAdapter(ArrayList<CustomMealPlanList> allItems) {
         this.allItems = allItems;
+    }
+
+    public void setOnItemClickListener(onItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface onItemClickListener{
+        void onItemClick(CustomMealPlanList mealPlan);
     }
 
     @NonNull
@@ -28,7 +38,7 @@ public class MealPlanListAdapter extends RecyclerView.Adapter<MealPlanListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        CustomMealPlanList mealPlan = allItems.get(position);
+        final CustomMealPlanList mealPlan = allItems.get(position);
         holder.Counter.setText(""+(position+1));
         holder.DayOfWeek.setText(mealPlan.getDayOfWeek());
         //region get and set food item texts
@@ -38,6 +48,13 @@ public class MealPlanListAdapter extends RecyclerView.Adapter<MealPlanListAdapte
         //region get and set total calorie
         holder.AmountOfCalorie.setText(""+getTotalCalorie(mealPlan.getAllFoodItems()));
         //endregion
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onItemClick(mealPlan);
+            }
+        });
     }
 
     //region calculate total calorie
@@ -72,8 +89,11 @@ public class MealPlanListAdapter extends RecyclerView.Adapter<MealPlanListAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView Counter, DayOfWeek, FoodItem, AmountOfCalorie;
+        private CardView cardView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            cardView = itemView.findViewById(R.id.item_card_view);
             Counter = itemView.findViewById(R.id.Counter);
             DayOfWeek = itemView.findViewById(R.id.DayOfWeek);
             FoodItem = itemView.findViewById(R.id.FoodItem);
