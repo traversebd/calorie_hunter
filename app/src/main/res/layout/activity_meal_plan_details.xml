@@ -92,6 +92,25 @@
 
             </HorizontalScrollView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:translationZ="4dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/foodgenericback"
+                    android:scaleType="centerInside"/>
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
