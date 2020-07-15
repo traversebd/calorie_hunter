@@ -1,9 +1,13 @@
 package com.traversebd.calorie_hunter.activities.mealplan;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -53,43 +57,67 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
     //region set food item title list
     private void setFoodsTitle() {
         for (int start = 0; start < mealPlan.getAllFoodItems().size(); start++) {
+            //region main card and its support layout
+            CardView cardView = new CardView(this);
+            LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(192,128);
+            cardView.setCardElevation(8);
+            cardView.setTranslationZ(4);
+            cardView.setLayoutParams(cardParams);
+            cardView.setUseCompatPadding(true);
+            cardView.setRadius(12);
             LinearLayout child = new LinearLayout(this);
-            child.setOrientation(LinearLayout.HORIZONTAL);
+            child.setOrientation(LinearLayout.VERTICAL);
+            //endregion
 
-            //get instance of textViews
-            TextView serialTXT = new TextView(this);
-            TextView separatorTXT = new TextView(this);
+            //region get instance of textViews
             TextView titleTXT = new TextView(this);
+            TextView calorieTXT = new TextView(this);
+            //endregion
+
+            //region set layout params
+            LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            titleParams.gravity = Gravity.CENTER_HORIZONTAL;
+            titleTXT.setLayoutParams(titleParams);
+            LinearLayout.LayoutParams calorieParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+            calorieParams.gravity = Gravity.CENTER_VERTICAL;
+            calorieTXT.setLayoutParams(calorieParams);
             //endregion
 
             //region set text size
-            serialTXT.setTextSize(16);
-            separatorTXT.setTextSize(16);
-            titleTXT.setTextSize(16);
+            titleTXT.setTextSize(14);
+            calorieTXT.setTextSize(14);
             //endregion
 
-            //region set text color
-            serialTXT.setTextColor(ContextCompat.getColor(this, R.color.md_green_900));
-            separatorTXT.setTextColor(ContextCompat.getColor(this, R.color.md_green_900));
-            titleTXT.setTextColor(ContextCompat.getColor(this, R.color.md_green_900));
+            //region set text color and padding
+            titleTXT.setBackgroundColor(ContextCompat.getColor(this, R.color.md_green_400));
+            titleTXT.setTextColor(ContextCompat.getColor(this, R.color.md_white_1000));
+            calorieTXT.setTextColor(ContextCompat.getColor(this, R.color.md_green_900));
+            titleTXT.setPadding(8,8,8,8);
+            calorieTXT.setPadding(8,8,8,8);
+            //endregion
+
+            //region set ellipsize and max lines
+            titleTXT.setMaxLines(1);
+            titleTXT.setEllipsize(TextUtils.TruncateAt.END);
+            calorieTXT.setMaxLines(1);
+            calorieTXT.setEllipsize(TextUtils.TruncateAt.END);
+            //endregion
 
             //region set text
-            serialTXT.setText(""+(start+1));
-            separatorTXT.setText(".");
             titleTXT.setText(mealPlan.getAllFoodItems().get(start).getTitle());
+            calorieTXT.setText(""+mealPlan.getAllFoodItems().get(start).getAmountOfCalorie());
             //endregion
 
-            //region set title text layout params and margin
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(4,0,0,0);
-            titleTXT.setLayoutParams(layoutParams);
+            //region set gravity
+            titleTXT.setGravity(Gravity.CENTER);
+            calorieTXT.setGravity(Gravity.CENTER);
             //endregion
 
             //region add all child to their main view
-            child.addView(serialTXT);
-            child.addView(separatorTXT);
             child.addView(titleTXT);
-            foodTitleContainer.addView(child);
+            child.addView(calorieTXT);
+            cardView.addView(child);
+            foodTitleContainer.addView(cardView);
             //endregion
         }
     }
