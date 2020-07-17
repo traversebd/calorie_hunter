@@ -69,13 +69,7 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
     private void setFoodsTitle() {
         for (int start = 0; start < mealPlan.getAllFoodItems().size(); start++) {
             //region main card and its support layout
-            CardView cardView = new CardView(this);
-            LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(392,192);
-            cardView.setCardElevation(8);
-            cardView.setTranslationZ(4);
-            cardView.setLayoutParams(cardParams);
-            cardView.setUseCompatPadding(true);
-            cardView.setRadius(16);
+            CardView cardView = ux.getCardView(192,392,8,4,true,16);
             LinearLayout child = new LinearLayout(this);
             child.setOrientation(LinearLayout.VERTICAL);
             //endregion
@@ -107,7 +101,7 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
 
             //region set text
             titleTXT.setText(mealPlan.getAllFoodItems().get(start).getTitle());
-            calorieTXT.setText(""+mealPlan.getAllFoodItems().get(start).getAmountOfCalorie()+" Kcal");
+            calorieTXT.setText(""+mealPlan.getAllFoodItems().get(start).getAmountOfCalorie()+" KCal");
             //endregion
 
             //region set gravity

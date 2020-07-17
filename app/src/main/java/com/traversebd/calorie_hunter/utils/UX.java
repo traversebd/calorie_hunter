@@ -25,6 +25,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+
 import com.traversebd.calorie_hunter.R;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -269,6 +271,19 @@ public class UX {
             imageViews[start].getLayoutParams().height = height;
             imageViews[start].getLayoutParams().width = width;
         }
+    }
+    //endregion
+
+    //region get new cardView
+    public CardView getCardView(int height, int width,int cardElevation, int translationZ, boolean shouldUsePadding, int cornerRadius){
+        CardView cardView = new CardView(context);
+        LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(width,height);
+        cardView.setCardElevation(cardElevation);
+        cardView.setTranslationZ(translationZ);
+        cardView.setLayoutParams(cardParams);
+        cardView.setUseCompatPadding(shouldUsePadding);
+        cardView.setRadius(cornerRadius);
+        return cardView;
     }
     //endregion
 
