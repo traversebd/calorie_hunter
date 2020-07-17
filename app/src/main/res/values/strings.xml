@@ -110,4 +110,6 @@
     <string name="foods">Foods</string>
     <string name="detailed_description">Here is the detailed description</string>
     <string name="meal_plan_details_heading">Your Plans, Your Habits and Your Life</string>
+    <string name="foods_moto_for_tour_page">Various types of foods and their details.</string>
+    <string name="calculate_calorie_moto_for_tour_page">You can calculate the calories you need based on foods.</string>
 </resources>
