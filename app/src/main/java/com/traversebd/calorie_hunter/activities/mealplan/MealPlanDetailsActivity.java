@@ -5,18 +5,18 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.models.mealplan.CustomMealPlanList;
+import com.traversebd.calorie_hunter.utils.UX;
 
 public class MealPlanDetailsActivity extends AppCompatActivity {
     private CustomMealPlanList mealPlan;
     private LinearLayout foodTitleContainer;
+    private UX ux;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +43,22 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
     //region all init operation
     private void initUI() {
         foodTitleContainer= findViewById(R.id.foodsTitleContainer);
+        ux = new UX(this);
     }
     //endregion
 
     //region perform all UI interactions
     private void bindUiWithComponents() {
+
+        //region back button
+        findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MealPlanDetailsActivity.this, MealPlanListActivity.class));
+            }
+        });
+        //endregion
+
         //region set food item title list
         setFoodsTitle();
         //endregion
@@ -59,12 +70,12 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
         for (int start = 0; start < mealPlan.getAllFoodItems().size(); start++) {
             //region main card and its support layout
             CardView cardView = new CardView(this);
-            LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(192,128);
+            LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(392,192);
             cardView.setCardElevation(8);
             cardView.setTranslationZ(4);
             cardView.setLayoutParams(cardParams);
             cardView.setUseCompatPadding(true);
-            cardView.setRadius(12);
+            cardView.setRadius(16);
             LinearLayout child = new LinearLayout(this);
             child.setOrientation(LinearLayout.VERTICAL);
             //endregion
@@ -75,42 +86,32 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             //endregion
 
             //region set layout params
-            LinearLayout.LayoutParams titleParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            titleParams.gravity = Gravity.CENTER_HORIZONTAL;
-            titleTXT.setLayoutParams(titleParams);
-            LinearLayout.LayoutParams calorieParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            calorieParams.gravity = Gravity.CENTER_VERTICAL;
-            calorieTXT.setLayoutParams(calorieParams);
+            titleTXT.setLayoutParams(ux.getLayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 86, Gravity.CENTER));
+            calorieTXT.setLayoutParams(ux.getLayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, Gravity.CENTER));
             //endregion
 
             //region set text size
-            titleTXT.setTextSize(14);
-            calorieTXT.setTextSize(14);
+            ux.setTextSize(new TextView[]{titleTXT,calorieTXT},14);
             //endregion
 
             //region set text color and padding
-            titleTXT.setBackgroundColor(ContextCompat.getColor(this, R.color.md_green_400));
-            titleTXT.setTextColor(ContextCompat.getColor(this, R.color.md_white_1000));
-            calorieTXT.setTextColor(ContextCompat.getColor(this, R.color.md_green_900));
-            titleTXT.setPadding(8,8,8,8);
-            calorieTXT.setPadding(8,8,8,8);
+            ux.setBackgroundColor(new TextView[]{titleTXT}, ContextCompat.getColor(this, R.color.md_green_400));
+            ux.setTextColor(new TextView[]{titleTXT}, ContextCompat.getColor(this, R.color.md_white_1000));
+            ux.setTextColor(new TextView[]{calorieTXT}, ContextCompat.getColor(this, R.color.md_green_900));
+            ux.setTextPadding(new TextView[]{titleTXT, calorieTXT},8,8,8,8);
             //endregion
 
             //region set ellipsize and max lines
-            titleTXT.setMaxLines(1);
-            titleTXT.setEllipsize(TextUtils.TruncateAt.END);
-            calorieTXT.setMaxLines(1);
-            calorieTXT.setEllipsize(TextUtils.TruncateAt.END);
+            ux.setEllipsizeWithMaxLines(new TextView[]{titleTXT,calorieTXT},1);
             //endregion
 
             //region set text
             titleTXT.setText(mealPlan.getAllFoodItems().get(start).getTitle());
-            calorieTXT.setText(""+mealPlan.getAllFoodItems().get(start).getAmountOfCalorie());
+            calorieTXT.setText(""+mealPlan.getAllFoodItems().get(start).getAmountOfCalorie()+" Kcal");
             //endregion
 
             //region set gravity
-            titleTXT.setGravity(Gravity.CENTER);
-            calorieTXT.setGravity(Gravity.CENTER);
+            ux.setTextGravity(new TextView[]{titleTXT, calorieTXT}, Gravity.CENTER);
             //endregion
 
             //region add all child to their main view

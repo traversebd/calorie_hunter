@@ -19,6 +19,7 @@ import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
@@ -267,6 +268,79 @@ public class UX {
         for (int start = 0; start < imageViews.length; start++) {
             imageViews[start].getLayoutParams().height = height;
             imageViews[start].getLayoutParams().width = width;
+        }
+    }
+    //endregion
+
+    //region get layout params
+    public LinearLayout.LayoutParams getLayoutParams(int height, int width, int gravity){
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(height,width);
+        layoutParams.gravity = gravity;
+        return layoutParams;
+    }
+    //endregion
+
+    //region set text size by id
+    public void setTextSize(int[] resIds, int textSize){
+        for (int start = 0; start < resIds.length; start++) {
+            View child = view.findViewById(resIds[start]);
+            TextView textView = (TextView) child;
+            textView.setTextSize(textSize);
+        }
+    }
+    //endregion
+
+    //region set text size by views
+    public void setTextSize(TextView[] textViews, int textSize){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setTextSize(textSize);
+        }
+    }
+    //endregion
+
+    //region set text ellipsize and maxLines
+    public void setEllipsizeWithMaxLines(TextView[] textViews, int maxLines){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setMaxLines(maxLines);
+        }
+    }
+    //endregion
+
+    //region set text gravity
+    public void setTextGravity(TextView[] textViews, int gravity){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setGravity(gravity);
+        }
+    }
+    //endregion
+
+    //region set text color
+    public void setTextColor(TextView[] textViews, int color){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setTextColor(color);
+        }
+    }
+    //endregion
+
+    //region set text padding
+    public void setTextPadding(TextView[] textViews, int paddingLeft, int paddingRight, int paddingTop, int paddingBottom){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setPadding(paddingLeft,paddingTop,paddingRight,paddingBottom);
+        }
+    }
+    //endregion
+
+    //region set backgroundColor
+    public void setBackgroundColor(TextView[] textViews, int color){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setBackgroundColor(color);
         }
     }
     //endregion
