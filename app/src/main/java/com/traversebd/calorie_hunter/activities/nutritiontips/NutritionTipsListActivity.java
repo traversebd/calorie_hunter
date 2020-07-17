@@ -40,7 +40,6 @@ public class NutritionTipsListActivity extends AppCompatActivity {
     //endregion
 
     //region activity components
-
     @Override
     public void onBackPressed() {
         startActivity(new Intent(NutritionTipsListActivity.this, HomeActivity.class));

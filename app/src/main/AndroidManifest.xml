@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.tour.TourPageActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activities.nutritiontips.NutritionTipsDetailsActivity"
             android:screenOrientation="unspecified"

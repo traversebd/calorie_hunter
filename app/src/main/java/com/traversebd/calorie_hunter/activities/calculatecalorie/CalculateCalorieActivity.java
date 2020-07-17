@@ -70,7 +70,7 @@ public class CalculateCalorieActivity extends AppCompatActivity {
         findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CalculateCalorieActivity.this,CalculateCalorieListActivity.class));
+                startActivity(new Intent(CalculateCalorieActivity.this,HomeActivity.class));
             }
         });
         //endregion
