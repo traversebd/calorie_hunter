@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.tour.TourPageActivity;
 import com.traversebd.calorie_hunter.utils.PrefManager;
-import static com.traversebd.calorie_hunter.utils.Constants.mOldUser;
+import static com.traversebd.calorie_hunter.utils.Constants.mAlreadyVisited;
 
 public class SplashActivity extends AppCompatActivity {
     private Animation topAnim, middleAnim, bottomAnim;
@@ -54,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent;
-                if (prefManager.getBoolean(mOldUser)) {
+                if (prefManager.getBoolean(mAlreadyVisited)) {
                     intent = new Intent(SplashActivity.this, HomeActivity.class);
                 } else {
                     intent = new Intent(SplashActivity.this, TourPageActivity.class);

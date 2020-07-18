@@ -18,7 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 import com.traversebd.calorie_hunter.utils.PrefManager;
-import static com.traversebd.calorie_hunter.utils.Constants.mOldUser;
+import static com.traversebd.calorie_hunter.utils.Constants.mAlreadyVisited;
 
 public class TourPageActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -74,7 +74,7 @@ public class TourPageActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    prefManager.set(mOldUser, true);
+                    prefManager.set(mAlreadyVisited, true);
                     startActivity(new Intent(TourPageActivity.this, HomeActivity.class));
                 }
             }

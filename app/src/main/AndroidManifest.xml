@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.slpeeingtips.SleepingTipsActivity"></activity>
         <activity
             android:name=".activities.base.SplashActivity"
             android:screenOrientation="unspecified"
@@ -19,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.tour.TourPageActivity"
+        <activity
+            android:name=".activities.tour.TourPageActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
