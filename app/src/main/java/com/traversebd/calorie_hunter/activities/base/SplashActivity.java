@@ -9,11 +9,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.activities.tour.TourPageActivity;
+import com.traversebd.calorie_hunter.utils.PrefManager;
+import static com.traversebd.calorie_hunter.utils.Constants.mOldUser;
 
 public class SplashActivity extends AppCompatActivity {
-    Animation topAnim, middleAnim, bottomAnim;
-    View first,second,third,fourth,fifth;
-    TextView AppName, DevelopedBy, Developer;
+    private Animation topAnim, middleAnim, bottomAnim;
+    private View first,second,third,fourth,fifth;
+    private TextView AppName, DevelopedBy, Developer;
+    private PrefManager prefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class SplashActivity extends AppCompatActivity {
         AppName = findViewById(R.id.AppName);
         DevelopedBy = findViewById(R.id.DevelopedBy);
         Developer = findViewById(R.id.DeveloperName);
+        prefManager = new PrefManager(this);
     }
     //endregion
 
@@ -48,12 +53,16 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                Intent intent;
+                if (prefManager.getBoolean(mOldUser)) {
+                    intent = new Intent(SplashActivity.this, HomeActivity.class);
+                } else {
+                    intent = new Intent(SplashActivity.this, TourPageActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }
         }, 2000);
-        //endregion
     }
     //endregion
 
