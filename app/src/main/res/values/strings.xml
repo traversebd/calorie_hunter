@@ -115,4 +115,6 @@
     <string name="for_breakfast">For Breakfast</string>
     <string name="for_lunch">For Lunch</string>
     <string name="for_dinner">For Dinner</string>
+    <string name="health_tips_moto_for_tour_page">Get various kinds of health tips</string>
+    <string name="meal_plan_moto_for_tour_page">Provided a list of meal plan to choose</string>
 </resources>

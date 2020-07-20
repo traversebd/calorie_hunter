@@ -52,6 +52,8 @@ public class TourPageActivity extends AppCompatActivity {
         // layouts of all welcome sliders
         layouts = new int[]{
                 R.layout.various_food_tour_page,
+                R.layout.meal_plan_tour_page,
+                R.layout.health_tips_tour_page,
                 R.layout.calculate_calorie_tour_page};
 
         // adding bottom dots

@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:layout_gravity="bottom|center_horizontal"
-                android:background="@drawable/calculator"
+                android:background="@drawable/meal_plan_tour_page_bg"
                 android:scaleType="centerInside" />
 
         </LinearLayout>
@@ -52,27 +52,27 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/welcome_intro_title2"
+                    android:id="@+id/welcome_intro_title1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_horizontal"
-                    android:text="@string/calculate_calorie"
+                    android:text="@string/meal_plan"
                     android:textColor="@color/colorPrimary"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/welcome_intro_subtitle2"
+                    android:id="@+id/welcome_intro_subtitle1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center_horizontal"
-                    android:text="@string/calculate_calorie_moto_for_tour_page"
+                    android:text="@string/meal_plan_moto_for_tour_page"
                     android:textColor="@color/md_green_900"
                     android:textSize="16sp"
-                    android:textStyle="bold"  />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
