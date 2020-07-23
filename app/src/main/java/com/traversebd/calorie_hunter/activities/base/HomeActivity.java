@@ -17,6 +17,7 @@ import com.traversebd.calorie_hunter.activities.fooditems.FoodListActivity;
 import com.traversebd.calorie_hunter.activities.healthtips.HealthTipsListActivity;
 import com.traversebd.calorie_hunter.activities.mealplan.MealPlanListActivity;
 import com.traversebd.calorie_hunter.activities.nutritiontips.NutritionTipsListActivity;
+import com.traversebd.calorie_hunter.activities.slpeeingtips.SleepingTipsActivity;
 import com.traversebd.calorie_hunter.adapters.FoodRecyclerAdapter;
 import com.traversebd.calorie_hunter.adapters.NavDrawerRecyclerAdapter;
 import com.traversebd.calorie_hunter.db.food.FoodViewModel;
@@ -168,6 +169,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this, NutritionTipsListActivity.class));
                 }
                 else if (navDrawer.getTitle().equals(getString(R.string.sleeping_tips))){
+                    startActivity(new Intent(HomeActivity.this, SleepingTipsActivity.class));
                 }
                 else if (navDrawer.getTitle().equals(getString(R.string.calculate_calorie))){
                     startActivity(new Intent(HomeActivity.this, CalculateCalorieActivity.class));

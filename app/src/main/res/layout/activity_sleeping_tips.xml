@@ -1,9 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.slpeeingtips.SleepingTipsActivity">
+    android:background="@color/md_white_1000"
+    tools:context=".activities.fooditems.FoodListActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="244dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            app:cardElevation="0dp"
+            android:translationZ="0dp"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="16dp"
+                android:background="@drawable/sleeping_dummy"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/backArrowLayout"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/a_roundbg"
+            android:translationZ="4dp">
+
+            <ImageView
+                android:id="@+id/BackButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_left_arrow"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/backArrowLayout"
+            android:text="@string/sleeping_tips"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_green_900"/>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-32dp"
+        app:cardBackgroundColor="@color/md_white_1000"
+        app:cardElevation="8dp"
+        android:translationZ="4dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginRight="-8dp"
+        app:cardCornerRadius="32dp"
+        android:layout_marginBottom="-16dp"
+        android:layout_below="@id/topBarLayout">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_below="@id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="@color/md_orange_400"
+                    app:cardElevation="8dp"
+                    android:translationZ="4dp"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:weightSum="2"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Wake up to"
+                                android:textColor="@color/md_white_1000"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="8dp"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="4dp"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Days"
+                                    android:textColor="@color/md_white_1000"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sunday"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/md_white_1000"
+                                    android:textSize="16sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginBottom="8dp"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Songs"
+                                    android:textColor="@color/md_white_1000"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:text="Birds Singing"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/md_white_1000"
+                                    android:textSize="16sp"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center|right"
+                                android:text="08h"
+                                android:textSize="32sp"
+                                android:textColor="@color/md_white_1000"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:gravity="center|left"
+                                android:text="25m"
+                                android:textSize="32sp"
+                                android:textColor="@color/md_white_1000"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
