@@ -17,6 +17,9 @@
             android:layout_height="244dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginLeft="-4dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginTop="-4dp"
             app:cardElevation="0dp"
             android:translationZ="0dp"
             app:cardCornerRadius="0dp">
@@ -24,8 +27,36 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="16dp"
-                android:background="@drawable/sleeping_dummy"/>
+                android:paddingBottom="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/sleeping_back"/>
+
+                <TextView
+                    android:id="@+id/helloText"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/helloGif"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:text="@string/sleep_quotes"
+                    android:textSize="18sp"
+                    android:textColor="@color/md_orange_700"
+                    android:layout_marginTop="72dp"
+                    android:textStyle="bold"/>
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/helloGif"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    android:layout_marginTop="72dp"
+                    android:layout_marginLeft="24dp"
+                    android:src="@drawable/hello_gif"/>
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -81,7 +112,6 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="-32dp"
         app:cardBackgroundColor="@color/md_white_1000"
         app:cardElevation="8dp"
         android:translationZ="4dp"
@@ -111,8 +141,8 @@
                     app:cardElevation="8dp"
                     android:translationZ="4dp"
                     app:cardCornerRadius="16dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp">
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -123,14 +153,14 @@
 
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_weight="1"
+                            android:layout_weight="1.2"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Wake up to"
+                                android:text="Your sleep assistant"
                                 android:textColor="@color/md_white_1000"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -149,7 +179,9 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Days"
+                                    android:text="@string/bed_time"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
                                     android:textColor="@color/md_white_1000"
                                     android:textSize="16sp"/>
 
@@ -157,9 +189,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Sunday"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
+                                    android:text="@string/time_to_sleep"
                                     android:textColor="@color/md_white_1000"
                                     android:textSize="16sp"/>
 
@@ -178,7 +208,7 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Songs"
+                                    android:text="@string/get_up_time"
                                     android:textColor="@color/md_white_1000"
                                     android:textSize="16sp"/>
 
@@ -186,9 +216,9 @@
                                     android:layout_width="0dp"
                                     android:layout_weight="1"
                                     android:layout_height="wrap_content"
-                                    android:text="Birds Singing"
+                                    android:text="@string/get_up_time_from_bed"
                                     android:ellipsize="end"
-                                    android:maxLines="1"
+                                    android:maxLines="2"
                                     android:textColor="@color/md_white_1000"
                                     android:textSize="16sp"/>
 
@@ -198,34 +228,53 @@
 
                         <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:weightSum="2"
+                            android:layout_weight=".8"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sleep_at_least"
                                 android:layout_gravity="center"
-                                android:gravity="center|right"
-                                android:text="08h"
-                                android:textSize="32sp"
-                                android:textColor="@color/md_white_1000"/>
+                                android:gravity="center"
+                                android:textColor="@color/md_white_1000"
+                                android:textSize="16sp"
+                                android:textStyle="bold"/>
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_weight="1"
-                                android:layout_height="match_parent"
-                                android:layout_marginLeft="8dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_weight=".8"
+                                android:weightSum="2"
                                 android:layout_gravity="center"
-                                android:gravity="center|left"
-                                android:text="25m"
-                                android:textSize="32sp"
-                                android:textColor="@color/md_white_1000"/>
+                                android:gravity="center"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:gravity="center|right"
+                                    android:text="08h"
+                                    android:textSize="32sp"
+                                    android:textColor="@color/md_white_1000"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center|left"
+                                    android:text="00m"
+                                    android:textSize="32sp"
+                                    android:textColor="@color/md_white_1000"/>
+
+                            </LinearLayout>
 
                         </LinearLayout>
 

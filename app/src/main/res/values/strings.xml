@@ -24,7 +24,7 @@
     <string name="health_quotes">\"Attention to health is life\'s greatest hindrance.\"</string>
     <string name="sleeping_tips">Sleeping Tips</string>
     <string name="hint_time_text">Its 11:00 PM</string>
-    <string name="time_to_sleep">Time to sleep early</string>
+    <string name="time_to_sleep_early">Time to sleep early</string>
     <string name="breakfast_items">Breakfast Items</string>
     <string name="lunch_items">Lunch Items</string>
     <string name="snacks_items">Snacks items</string>
@@ -117,4 +117,11 @@
     <string name="for_dinner">For Dinner</string>
     <string name="health_tips_moto_for_tour_page">Get various kinds of health tips</string>
     <string name="meal_plan_moto_for_tour_page">Provided a list of meal plan to choose</string>
+    <string name="hello_there">Hello There</string>
+    <string name="time_to_sleep">Between 8 p.m. and midnight</string>
+    <string name="bed_time">Bed time</string>
+    <string name="get_up_time">Get up time</string>
+    <string name="get_up_time_from_bed">After a sound sleep</string>
+    <string name="sleep_at_least">Sleep at least</string>
+    <string name="sleep_quotes">“Tomorrow is going to be the best day ever!”</string>
 </resources>
