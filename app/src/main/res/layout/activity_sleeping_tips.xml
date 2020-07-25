@@ -53,7 +53,7 @@
                     android:layout_width="92dp"
                     android:layout_height="92dp"
                     android:layout_marginTop="72dp"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginLeft="8dp"
                     android:src="@drawable/hello_gif"/>
 
             </RelativeLayout>
@@ -125,8 +125,7 @@
             android:id="@+id/scrollView"
             android:layout_below="@id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,8 +140,8 @@
                     app:cardElevation="8dp"
                     android:translationZ="4dp"
                     app:cardCornerRadius="16dp"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginRight="28dp">
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -160,9 +159,9 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Your sleep assistant"
+                                android:text="@string/your_sleep_assistant"
                                 android:textColor="@color/md_white_1000"
-                                android:textSize="20sp"
+                                android:textSize="18sp"
                                 android:textStyle="bold"
                                 android:layout_marginLeft="8dp"
                                 android:layout_marginTop="8dp"/>
@@ -260,7 +259,7 @@
                                     android:layout_gravity="center"
                                     android:gravity="center|right"
                                     android:text="08h"
-                                    android:textSize="32sp"
+                                    android:textSize="24sp"
                                     android:textColor="@color/md_white_1000"/>
 
                                 <TextView
@@ -271,7 +270,7 @@
                                     android:layout_gravity="center"
                                     android:gravity="center|left"
                                     android:text="00m"
-                                    android:textSize="32sp"
+                                    android:textSize="24sp"
                                     android:textColor="@color/md_white_1000"/>
 
                             </LinearLayout>
@@ -281,6 +280,64 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:text="@string/sleep_requirements_by_age"
+                    android:textSize="18sp"
+                    android:textColor="@color/md_orange_700"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:text="@string/note_information_proved_by_national_sleep_foundation"
+                    android:textSize="14sp"
+                    android:textColor="@color/md_orange_700"
+                    android:textStyle="normal"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/age"
+                        android:textColor="@color/md_grey_700"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hours_of_sleep"
+                        android:textColor="@color/md_grey_700"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hoursToSleepRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="32dp"
+                    tools:listitem="@layout/adapter_recycler_sleeping_duration_list"/>
 
             </LinearLayout>
 

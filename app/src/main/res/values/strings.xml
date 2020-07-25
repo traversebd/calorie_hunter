@@ -68,7 +68,7 @@
     <string name="weight_in_kg">Weight in Kg</string>
     <string name="i_am">I am</string>
     <string name="weight">Weight</string>
-    <string name="age">Age is</string>
+    <string name="age_is">Age is</string>
     <string name="enter_your_age">Enter your age</string>
     <string name="my_activity_level">My activity level</string>
     <string name="low">Low</string>
@@ -124,4 +124,9 @@
     <string name="get_up_time_from_bed">After a sound sleep</string>
     <string name="sleep_at_least">Sleep at least</string>
     <string name="sleep_quotes">“Tomorrow is going to be the best day ever!”</string>
+    <string name="sleep_requirements_by_age">"Sleep requirements by age "</string>
+    <string name="age">Age</string>
+    <string name="hours_of_sleep">Hours of sleep</string>
+    <string name="note_information_proved_by_national_sleep_foundation">Note [All of these information provided by National Sleep Foumcation]</string>
+    <string name="your_sleep_assistant">Your sleep assistant</string>
 </resources>

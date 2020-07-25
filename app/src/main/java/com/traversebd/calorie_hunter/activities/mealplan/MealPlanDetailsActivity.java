@@ -160,7 +160,7 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             iconBreakfast.setImageResource(foodItem.getIcon());
             titleBreakfast.setText(foodItem.getTitle());
             descriptionBreakfast.setText(foodItem.getFoodShortDescription());
-            amountOfCalorieBreakfast.setText(""+foodItem.getAmountOfCalorie());
+            amountOfCalorieBreakfast.setText(""+foodItem.getAmountOfCalorie()+" KCal");
             amountOfProteinBreakfast.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsBreakfast.setText(""+foodItem.getAmountOfCarbohydrates());
         }
@@ -172,7 +172,7 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             iconLunch.setImageResource(foodItem.getIcon());
             titleLunch.setText(foodItem.getTitle());
             descriptionLunch.setText(foodItem.getFoodShortDescription());
-            amountOfCalorieLunch.setText(""+foodItem.getAmountOfCalorie());
+            amountOfCalorieLunch.setText(""+foodItem.getAmountOfCalorie()+" KCal");
             amountOfProteinLunch.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsLunch.setText(""+foodItem.getAmountOfCarbohydrates());
         }
@@ -184,7 +184,7 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             iconDinner.setImageResource(foodItem.getIcon());
             titleDinner.setText(foodItem.getTitle());
             descriptionDinner.setText(foodItem.getFoodShortDescription());
-            amountOfCalorieDinner.setText(""+foodItem.getAmountOfCalorie());
+            amountOfCalorieDinner.setText(""+foodItem.getAmountOfCalorie()+" KCal");
             amountOfProteinDinner.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsDinner.setText(""+foodItem.getAmountOfCarbohydrates());
         }

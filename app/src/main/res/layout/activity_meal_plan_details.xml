@@ -262,7 +262,7 @@
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_weight="2.4"
+                                    android:layout_weight="2"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -292,18 +292,6 @@
                                     android:ellipsize="end"
                                     android:maxLines="1"
                                     android:text="@string/zero"
-                                    android:paddingTop="2dp"
-                                    android:paddingBottom="2dp"
-                                    android:paddingLeft="4dp"
-                                    android:paddingRight="8dp"
-                                    android:textColor="@color/md_green_900"
-                                    android:textSize="14sp"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:text="@string/kcal"
                                     android:paddingTop="2dp"
                                     android:paddingBottom="2dp"
                                     android:paddingLeft="4dp"
@@ -547,7 +535,7 @@
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_weight="2.4"
+                                    android:layout_weight="2"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -577,18 +565,6 @@
                                     android:ellipsize="end"
                                     android:maxLines="1"
                                     android:text="@string/zero"
-                                    android:paddingTop="2dp"
-                                    android:paddingBottom="2dp"
-                                    android:paddingLeft="4dp"
-                                    android:paddingRight="8dp"
-                                    android:textColor="@color/md_green_900"
-                                    android:textSize="14sp"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:text="@string/kcal"
                                     android:paddingTop="2dp"
                                     android:paddingBottom="2dp"
                                     android:paddingLeft="4dp"
@@ -832,7 +808,7 @@
 
                                 <TextView
                                     android:layout_width="0dp"
-                                    android:layout_weight="2.4"
+                                    android:layout_weight="2"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -862,18 +838,6 @@
                                     android:ellipsize="end"
                                     android:maxLines="1"
                                     android:text="@string/zero"
-                                    android:paddingTop="2dp"
-                                    android:paddingBottom="2dp"
-                                    android:paddingLeft="4dp"
-                                    android:paddingRight="8dp"
-                                    android:textColor="@color/md_green_900"
-                                    android:textSize="14sp"/>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:text="@string/kcal"
                                     android:paddingTop="2dp"
                                     android:paddingBottom="2dp"
                                     android:paddingLeft="4dp"
