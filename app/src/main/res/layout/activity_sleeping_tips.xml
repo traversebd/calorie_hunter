@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_white_1000"
-    tools:context=".activities.fooditems.FoodListActivity">
+    tools:context=".activities.slpeeingtips.SleepingTipsActivity">
 
     <RelativeLayout
         android:id="@+id/topBarLayout"
@@ -32,6 +32,9 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="-4dp"
+                    android:layout_marginRight="-4dp"
+                    android:layout_marginTop="-8dp"
                     android:src="@drawable/sleeping_back"/>
 
                 <TextView

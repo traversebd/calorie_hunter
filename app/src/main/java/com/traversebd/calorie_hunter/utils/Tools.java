@@ -5,13 +5,21 @@ import android.content.Intent;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.os.Environment;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Locale;
+import static com.traversebd.calorie_hunter.utils.Constants.DB_NAME;
 
 public class Tools {
     private Context context;
@@ -110,5 +118,29 @@ public class Tools {
         exitIntent.addCategory(Intent.CATEGORY_HOME);
         exitIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(exitIntent);
+    }
+
+    /**
+     * This method will export the db file
+     */
+    public void exportDB(){
+        File sd = Environment.getExternalStorageDirectory();
+        File data = Environment.getDataDirectory();
+        FileChannel source=null;
+        FileChannel destination=null;
+        String currentDBPath = "/data/"+ "com.traversebd.calorie_hunter" +"/databases/"+DB_NAME;
+        String backupDBPath = DB_NAME;
+        File currentDB = new File(data, currentDBPath);
+        File backupDB = new File(sd, backupDBPath);
+        try {
+            source = new FileInputStream(currentDB).getChannel();
+            destination = new FileOutputStream(backupDB).getChannel();
+            destination.transferFrom(source, 0, source.size());
+            source.close();
+            destination.close();
+            Toast.makeText(context, "DB Exported!", Toast.LENGTH_LONG).show();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 }

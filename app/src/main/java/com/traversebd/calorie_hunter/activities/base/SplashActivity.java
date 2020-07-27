@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.amitshekhar.DebugDB;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.tour.TourPageActivity;
+import com.traversebd.calorie_hunter.utils.AllFileManager;
 import com.traversebd.calorie_hunter.utils.PrefManager;
 import static com.traversebd.calorie_hunter.utils.Constants.mAlreadyVisited;
 
@@ -46,6 +50,12 @@ public class SplashActivity extends AppCompatActivity {
 
     //region perform UI interactions
     private void bindUIWithComponents() {
+
+        //region get db log browser address
+        Log.v("Shakil - DB Browser", DebugDB.getAddressLog());
+        //Toast.makeText(getApplicationContext(),"Shakil - DB Browser"+DebugDB.getAddressLog(),Toast.LENGTH_LONG).show();
+        //endregion
+
         setAnimation();
         loadAnimationForUI();
 
