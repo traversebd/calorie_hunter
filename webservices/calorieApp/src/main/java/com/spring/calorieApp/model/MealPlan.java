@@ -9,63 +9,55 @@ import javax.persistence.Id;
 public class MealPlan {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
-	private String DayOfWeek;
-	private int IconRes;
-	private String FoodType;
-	private String FoodItems;
+	private long id;
+	private String dayOfWeek;
+	private int iconRes;
+	private String ioodType;
+	private String foodItems;
 
 	public MealPlan() {
 
 	}
 
-	public MealPlan(int id, String dayOfWeek, int iconRes, String foodType, String foodItems) {
-		super();
-		Id = id;
-		DayOfWeek = dayOfWeek;
-		IconRes = iconRes;
-		FoodType = foodType;
-		FoodItems = foodItems;
+	public long getId() {
+		return id;
 	}
 
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getDayOfWeek() {
-		return DayOfWeek;
+		return dayOfWeek;
 	}
 
 	public void setDayOfWeek(String dayOfWeek) {
-		DayOfWeek = dayOfWeek;
+		this.dayOfWeek = dayOfWeek;
 	}
 
 	public int getIconRes() {
-		return IconRes;
+		return iconRes;
 	}
 
 	public void setIconRes(int iconRes) {
-		IconRes = iconRes;
+		this.iconRes = iconRes;
 	}
 
-	public String getFoodType() {
-		return FoodType;
+	public String getIoodType() {
+		return ioodType;
 	}
 
-	public void setFoodType(String foodType) {
-		FoodType = foodType;
+	public void setIoodType(String ioodType) {
+		this.ioodType = ioodType;
 	}
 
 	public String getFoodItems() {
-		return FoodItems;
+		return foodItems;
 	}
 
 	public void setFoodItems(String foodItems) {
-		FoodItems = foodItems;
+		this.foodItems = foodItems;
 	}
 
+	
 }

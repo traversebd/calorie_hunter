@@ -9,73 +9,63 @@ import javax.persistence.Id;
 public class Calorie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
-	private String Gender;
-	private int WeightInKg;
-	private int HeightInCm;
-	private int Age;
-	private int ActivityLevelId;
+	private long id;
+	private String gender;
+	private int weightInKg;
+	private int heightInCm;
+	private int age;
+	private int activityLevelId;
 
 	public Calorie() {
 		
 	}
 
-	public Calorie(int id, String gender, int weightInKg, int heightInCm, int age, int activityLevelId) {
-		super();
-		Id = id;
-		Gender = gender;
-		WeightInKg = weightInKg;
-		HeightInCm = heightInCm;
-		Age = age;
-		ActivityLevelId = activityLevelId;
+	public long getId() {
+		return id;
 	}
 
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 
 	public int getWeightInKg() {
-		return WeightInKg;
+		return weightInKg;
 	}
 
 	public void setWeightInKg(int weightInKg) {
-		WeightInKg = weightInKg;
+		this.weightInKg = weightInKg;
 	}
 
 	public int getHeightInCm() {
-		return HeightInCm;
+		return heightInCm;
 	}
 
 	public void setHeightInCm(int heightInCm) {
-		HeightInCm = heightInCm;
+		this.heightInCm = heightInCm;
 	}
 
 	public int getAge() {
-		return Age;
+		return age;
 	}
 
 	public void setAge(int age) {
-		Age = age;
+		this.age = age;
 	}
 
 	public int getActivityLevelId() {
-		return ActivityLevelId;
+		return activityLevelId;
 	}
 
 	public void setActivityLevelId(int activityLevelId) {
-		ActivityLevelId = activityLevelId;
+		this.activityLevelId = activityLevelId;
 	}
 
 }

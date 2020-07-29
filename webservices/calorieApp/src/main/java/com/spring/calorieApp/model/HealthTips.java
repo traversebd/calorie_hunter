@@ -9,74 +9,47 @@ import javax.persistence.Id;
 public class HealthTips {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
-	private String Title;
-	private String CollectionDate;
-	private String ShortDescription;
-	private String Description;
-	private String DetailsTips;
-
-	public HealthTips() {
-		super();
+	private long id;
+	private String title;
+	private String collectionDate;
+	private String shortDescription;
+	private String description;
+	private String detailsTips;
+	public long getId() {
+		return id;
 	}
-
-	public HealthTips(int id, String title, String collectionDate, String shortDescription, String description,
-			String detailsTips) {
-		super();
-		Id = id;
-		Title = title;
-		CollectionDate = collectionDate;
-		ShortDescription = shortDescription;
-		Description = description;
-		DetailsTips = detailsTips;
+	public void setId(long id) {
+		this.id = id;
 	}
-
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
-	}
-
 	public String getTitle() {
-		return Title;
+		return title;
 	}
-
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
-
 	public String getCollectionDate() {
-		return CollectionDate;
+		return collectionDate;
 	}
-
 	public void setCollectionDate(String collectionDate) {
-		CollectionDate = collectionDate;
+		this.collectionDate = collectionDate;
 	}
-
 	public String getShortDescription() {
-		return ShortDescription;
+		return shortDescription;
 	}
-
 	public void setShortDescription(String shortDescription) {
-		ShortDescription = shortDescription;
+		this.shortDescription = shortDescription;
 	}
-
 	public String getDescription() {
-		return Description;
+		return description;
 	}
-
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
-
 	public String getDetailsTips() {
-		return DetailsTips;
+		return detailsTips;
 	}
-
 	public void setDetailsTips(String detailsTips) {
-		DetailsTips = detailsTips;
+		this.detailsTips = detailsTips;
 	}
 
 }

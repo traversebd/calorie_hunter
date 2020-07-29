@@ -9,155 +9,105 @@ import javax.persistence.Id;
 public class FoodItem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int Id;
-	private int FoodTypeId;
-	private String FoodTypeTitle;
-	private String FoodShortDescription;
-	private String FoodDescription;
-	private String Title;
-	private int Icon;
-	private double AmountOfCalorie;
-	private double AmountOfFat;
-	private double AmountOfFiber;
-	private double AmountOfProtein;
-	private double AmountOfSodium;
-	private double AmountOfSugar;
-	private double AmountOfCarbohydrates;
-
-	public FoodItem() {
-
+	private long id;
+	private int foodTypeId;
+	private String foodTypeTitle;
+	private String foodShortDescription;
+	private String foodDescription;
+	private String title;
+	private int icon;
+	private double amountOfCalorie;
+	private double amountOfFat;
+	private double amountOfFiber;
+	private double amountOfProtein;
+	private double amountOfSodium;
+	private double amountOfSugar;
+	private double amountOfCarbohydrates;
+	public long getId() {
+		return id;
 	}
-
-	public FoodItem(int id, int foodTypeId, String foodTypeTitle, String foodShortDescription, String foodDescription,
-			String title, int icon, double amountOfCalorie, double amountOfFat, double amountOfFiber,
-			double amountOfProtein, double amountOfSodium, double amountOfSugar, double amountOfCarbohydrates) {
-		super();
-		Id = id;
-		FoodTypeId = foodTypeId;
-		FoodTypeTitle = foodTypeTitle;
-		FoodShortDescription = foodShortDescription;
-		FoodDescription = foodDescription;
-		Title = title;
-		Icon = icon;
-		AmountOfCalorie = amountOfCalorie;
-		AmountOfFat = amountOfFat;
-		AmountOfFiber = amountOfFiber;
-		AmountOfProtein = amountOfProtein;
-		AmountOfSodium = amountOfSodium;
-		AmountOfSugar = amountOfSugar;
-		AmountOfCarbohydrates = amountOfCarbohydrates;
+	public void setId(long id) {
+		this.id = id;
 	}
-
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		Id = id;
-	}
-
 	public int getFoodTypeId() {
-		return FoodTypeId;
+		return foodTypeId;
 	}
-
 	public void setFoodTypeId(int foodTypeId) {
-		FoodTypeId = foodTypeId;
+		this.foodTypeId = foodTypeId;
 	}
-
 	public String getFoodTypeTitle() {
-		return FoodTypeTitle;
+		return foodTypeTitle;
 	}
-
 	public void setFoodTypeTitle(String foodTypeTitle) {
-		FoodTypeTitle = foodTypeTitle;
+		this.foodTypeTitle = foodTypeTitle;
 	}
-
 	public String getFoodShortDescription() {
-		return FoodShortDescription;
+		return foodShortDescription;
 	}
-
 	public void setFoodShortDescription(String foodShortDescription) {
-		FoodShortDescription = foodShortDescription;
+		this.foodShortDescription = foodShortDescription;
 	}
-
 	public String getFoodDescription() {
-		return FoodDescription;
+		return foodDescription;
 	}
-
 	public void setFoodDescription(String foodDescription) {
-		FoodDescription = foodDescription;
+		this.foodDescription = foodDescription;
 	}
-
 	public String getTitle() {
-		return Title;
+		return title;
 	}
-
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
-
 	public int getIcon() {
-		return Icon;
+		return icon;
 	}
-
 	public void setIcon(int icon) {
-		Icon = icon;
+		this.icon = icon;
 	}
-
 	public double getAmountOfCalorie() {
-		return AmountOfCalorie;
+		return amountOfCalorie;
 	}
-
 	public void setAmountOfCalorie(double amountOfCalorie) {
-		AmountOfCalorie = amountOfCalorie;
+		this.amountOfCalorie = amountOfCalorie;
 	}
-
 	public double getAmountOfFat() {
-		return AmountOfFat;
+		return amountOfFat;
 	}
-
 	public void setAmountOfFat(double amountOfFat) {
-		AmountOfFat = amountOfFat;
+		this.amountOfFat = amountOfFat;
 	}
-
 	public double getAmountOfFiber() {
-		return AmountOfFiber;
+		return amountOfFiber;
 	}
-
 	public void setAmountOfFiber(double amountOfFiber) {
-		AmountOfFiber = amountOfFiber;
+		this.amountOfFiber = amountOfFiber;
 	}
-
 	public double getAmountOfProtein() {
-		return AmountOfProtein;
+		return amountOfProtein;
 	}
-
 	public void setAmountOfProtein(double amountOfProtein) {
-		AmountOfProtein = amountOfProtein;
+		this.amountOfProtein = amountOfProtein;
 	}
-
 	public double getAmountOfSodium() {
-		return AmountOfSodium;
+		return amountOfSodium;
 	}
-
 	public void setAmountOfSodium(double amountOfSodium) {
-		AmountOfSodium = amountOfSodium;
+		this.amountOfSodium = amountOfSodium;
 	}
-
 	public double getAmountOfSugar() {
-		return AmountOfSugar;
+		return amountOfSugar;
 	}
-
 	public void setAmountOfSugar(double amountOfSugar) {
-		AmountOfSugar = amountOfSugar;
+		this.amountOfSugar = amountOfSugar;
 	}
-
 	public double getAmountOfCarbohydrates() {
-		return AmountOfCarbohydrates;
+		return amountOfCarbohydrates;
+	}
+	public void setAmountOfCarbohydrates(double amountOfCarbohydrates) {
+		this.amountOfCarbohydrates = amountOfCarbohydrates;
 	}
 
-	public void setAmountOfCarbohydrates(double amountOfCarbohydrates) {
-		AmountOfCarbohydrates = amountOfCarbohydrates;
-	}
+	
 
 }
