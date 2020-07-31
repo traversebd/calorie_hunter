@@ -130,4 +130,12 @@
     <string name="note_information_proved_by_national_sleep_foundation">Note [All of these information provided by National Sleep Foumcation]</string>
     <string name="your_sleep_assistant">Your sleep assistant</string>
     <string name="nutrition_tips_moto">One must eat to live, not to eat.</string>
+    <string name="total_tips">Total tips</string>
+    <string name="total">Total</string>
+    <string name="twenty">20</string>
+    <string name="tips_to_improve_your_nutrition">Tips to Improve Your Nutrition</string>
+    <string name="portion_control">Body Portion Control</string>
+    <string name="listen_to_your_body">Listen to Your Body</string>
+    <string name="more_and_more_fiber">More and More Fiber</string>
+    <string name="general_tips">General Nutrition Tips</string>
 </resources>
