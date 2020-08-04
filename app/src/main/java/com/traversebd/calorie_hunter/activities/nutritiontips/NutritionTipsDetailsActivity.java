@@ -1,17 +1,21 @@
 package com.traversebd.calorie_hunter.activities.nutritiontips;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
+import com.traversebd.calorie_hunter.adapters.NutritionDetailTipsAdapter;
 import com.traversebd.calorie_hunter.models.nutritiontips.NutritionTips;
 import java.util.ArrayList;
 
 public class NutritionTipsDetailsActivity extends AppCompatActivity {
     private int nutritionTypeId;
     private NutritionTips nutritionTips;
+    private RecyclerView allNutritionTipsRecycler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +30,7 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
 
     //region all init operation
     private void initUI() {
-
+        allNutritionTipsRecycler = findViewById(R.id.detailTipsRecycler);
     }
     //endregion
 
@@ -47,6 +51,10 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
 
         //region set data
         nutritionTips = setNutritionTips();
+        //endregion
+
+        //region set nutrition tips details recycler
+        setDetailsRecycler();
         //endregion
     }
     //endregion
@@ -123,6 +131,15 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
         detailTipsList.add("Try replacing one soda or sugary drink a day with water. Many sodas offer 290-plus calories, 42 grams of sugar and up to 50 milligrams of sodium!");
         detailTipsList.add("Flavor your water naturally with a lemon slice, a lime wedge or even cucumber slices.");
         return detailTipsList;
+    }
+    //endregion
+
+    //region set recycler for details tips
+    private void setDetailsRecycler(){
+        NutritionDetailTipsAdapter detailTipsAdapter = new NutritionDetailTipsAdapter(nutritionTips.getDetailTipsList());
+        allNutritionTipsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        allNutritionTipsRecycler.setAdapter(detailTipsAdapter);
+        detailTipsAdapter.notifyDataSetChanged();
     }
     //endregion
 
