@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.adapters.NutritionDetailTipsAdapter;
@@ -16,6 +17,7 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
     private int nutritionTypeId;
     private NutritionTips nutritionTips;
     private RecyclerView allNutritionTipsRecycler;
+    private TextView nutritionTipsHeading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
     //region all init operation
     private void initUI() {
         allNutritionTipsRecycler = findViewById(R.id.detailTipsRecycler);
+        nutritionTipsHeading = findViewById(R.id.nutritionTipsHeading);
     }
     //endregion
 
@@ -53,6 +56,15 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
         nutritionTips = setNutritionTips();
         //endregion
 
+        //region set nutrition tips type title
+        if (nutritionTips != null) {
+            nutritionTipsHeading.setText(nutritionTips.getNutritionTypeTitle());
+        }
+        else{
+            nutritionTipsHeading.setText(getString(R.string.no_data_found));
+        }
+        //endregion
+
         //region set nutrition tips details recycler
         setDetailsRecycler();
         //endregion
@@ -73,19 +85,24 @@ public class NutritionTipsDetailsActivity extends AppCompatActivity {
     //region set nutrition tips data
     private NutritionTips setNutritionTips(){
         NutritionTips nutritionTips = new NutritionTips();
-        nutritionTips.setId(1);
-        nutritionTips.setNutritionTypeId(1);
-        nutritionTips.setNutritionTypeTitle("Portion Control");
         if (nutritionTypeId == 1) {
+            nutritionTips.setNutritionTypeId(1);
+            nutritionTips.setNutritionTypeTitle("Portion Control");
             nutritionTips.setDetailTipsList(setPortionDetailsData());
         }
         else if (nutritionTypeId == 2) {
+            nutritionTips.setNutritionTypeId(2);
+            nutritionTips.setNutritionTypeTitle("Listen to Your Body");
             nutritionTips.setDetailTipsList(setListeningBodyDetailsData());
         }
         else if (nutritionTypeId == 3) {
+            nutritionTips.setNutritionTypeId(3);
+            nutritionTips.setNutritionTypeTitle("More and More Fiber");
             nutritionTips.setDetailTipsList(setMoreFiberDetailsData());
         }
         else if (nutritionTypeId == 4) {
+            nutritionTips.setNutritionTypeId(4);
+            nutritionTips.setNutritionTypeTitle("General Nutrition Tips");
             nutritionTips.setDetailTipsList(setGeneralTipsDetailsData());
         }
         return nutritionTips;
