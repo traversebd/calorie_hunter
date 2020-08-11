@@ -71,6 +71,9 @@ dependencies {
 
     //Android gif loader
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.0'
+    
+    //Arc Progress bar
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
 
     // see database in browser
     debugImplementation 'com.amitshekhar.android:debug-db:1.0.3'

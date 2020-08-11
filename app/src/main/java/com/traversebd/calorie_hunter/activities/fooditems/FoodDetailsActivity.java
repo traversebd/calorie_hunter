@@ -6,15 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.traversebd.calorie_hunter.R;
 import com.traversebd.calorie_hunter.activities.base.HomeActivity;
 import com.traversebd.calorie_hunter.models.food.FoodItem;
+import com.traversebd.calorie_hunter.utils.Tools;
 
 public class FoodDetailsActivity extends AppCompatActivity {
-    private TextView toolbarTitle, foodShortDescription, foodDescription, amountOfCalorie, amountOfFat, amountOfFiber, amountOfProtein, amountOfSodium,
-            amountOfSugar,amountOfCholesterol, amountOfCarbs, amountOfMagnesium;
+    private TextView toolbarTitle, foodShortDescription, foodDescription;
     private ImageView foodIcon;
     private FoodItem foodItem;
+    private ArcProgress amountOfCalorieProgress, amountOfFatProgress, amountOfFiberProgress, amountOfProteinProgress, amountOfSodiumProgress, amountOfSugarProgress
+            ,amountOfCholesterolProgress, amountOfCarbsProgress, amountOfMagnesiumProgress;
+    private Tools tools;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +36,16 @@ public class FoodDetailsActivity extends AppCompatActivity {
         foodIcon = findViewById(R.id.Icon);
         foodShortDescription = findViewById(R.id.FoodShortDescription);
         foodDescription = findViewById(R.id.FoodDescription);
-        amountOfCalorie = findViewById(R.id.AmountOfCalorie);
-        amountOfFat = findViewById(R.id.AmountOfFat);
-        amountOfFiber = findViewById(R.id.AmountOfFiber);
-        amountOfProtein = findViewById(R.id.AmountOfProtein);
-        amountOfSodium = findViewById(R.id.AmountOfSodium);
-        amountOfSugar = findViewById(R.id.AmountOfSugar);
-        amountOfCholesterol = findViewById(R.id.AmountOfCholesterol);
-        amountOfCarbs = findViewById(R.id.AmountOfCarbohydrates);
-        amountOfMagnesium = findViewById(R.id.AmountOfMagnesium);
+        tools = new Tools(this);
+        amountOfCalorieProgress = findViewById(R.id.amountOfCalorieProgress);
+        amountOfFatProgress = findViewById(R.id.amountOfFatProgress);
+        amountOfFiberProgress = findViewById(R.id.amountOfFiberProgress);
+        amountOfProteinProgress = findViewById(R.id.amountOfProteinProgress);
+        amountOfSodiumProgress = findViewById(R.id.amountOfSodiumProgress);
+        amountOfSugarProgress = findViewById(R.id.amountOfSugarProgress);
+        amountOfCholesterolProgress = findViewById(R.id.amountOfCholesterolProgress);
+        amountOfCarbsProgress = findViewById(R.id.amountOfCarbsProgress);
+        amountOfMagnesiumProgress = findViewById(R.id.amountOfMagnesiumProgress);
     }
     //endregion
 
@@ -80,15 +85,19 @@ public class FoodDetailsActivity extends AppCompatActivity {
         foodIcon.setImageResource(foodItem.getIcon());
         foodShortDescription.setText(foodItem.getFoodShortDescription());
         foodDescription.setText(foodItem.getFoodDescription());
-        amountOfCalorie.setText(""+foodItem.getAmountOfCalorie());
-        amountOfFat.setText(""+foodItem.getAmountOfFat());
-        amountOfFiber.setText(""+foodItem.getAmountOfFiber());
-        amountOfProtein.setText(""+foodItem.getAmountOfProtein());
-        amountOfSodium.setText(""+foodItem.getAmountOfSodium());
-        amountOfSugar.setText(""+foodItem.getAmountOfSugar());
-        amountOfCholesterol.setText(""+foodItem.getAmountOfCholesterol());
-        amountOfCarbs.setText(""+foodItem.getAmountOfCarbohydrates());
-        amountOfMagnesium.setText(""+foodItem.getAmountOfMagnesium());
+
+        tools.setArcMaxProgress(new ArcProgress[]{amountOfCalorieProgress, amountOfFatProgress,amountOfFiberProgress,amountOfProteinProgress,amountOfSodiumProgress,
+                amountOfSugarProgress, amountOfCholesterolProgress, amountOfCarbsProgress, amountOfMagnesiumProgress},100);
+
+        amountOfCalorieProgress.setProgress((int) foodItem.getAmountOfCalorie());
+        amountOfFatProgress.setProgress((int) foodItem.getAmountOfFat());
+        amountOfFiberProgress.setProgress((int) foodItem.getAmountOfFiber());
+        amountOfProteinProgress.setProgress((int) foodItem.getAmountOfProtein());
+        amountOfSodiumProgress.setProgress((int) foodItem.getAmountOfSodium());
+        amountOfSugarProgress.setProgress((int) foodItem.getAmountOfSugar());
+        amountOfCholesterolProgress.setProgress((int) foodItem.getAmountOfCholesterol());
+        amountOfCarbsProgress.setProgress((int) foodItem.getAmountOfCarbohydrates());
+        amountOfMagnesiumProgress.setProgress((int) foodItem.getAmountOfMagnesium());
     }
     //endregion
 

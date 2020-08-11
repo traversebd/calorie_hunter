@@ -139,4 +139,5 @@
     <string name="more_and_more_fiber">More and More Fiber</string>
     <string name="general_tips">General Nutrition Tips</string>
     <string name="no_data_found">Not Data Found</string>
+    <string name="blank" />
 </resources>

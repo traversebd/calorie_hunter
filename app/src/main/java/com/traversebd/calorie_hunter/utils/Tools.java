@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+
+import com.github.lzyzsd.circleprogress.ArcProgress;
 import com.traversebd.calorie_hunter.R;
 import java.io.File;
 import java.io.FileInputStream;
@@ -141,6 +143,15 @@ public class Tools {
             Toast.makeText(context, "DB Exported!", Toast.LENGTH_LONG).show();
         } catch(IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * This method will set max value for progress
+     */
+    public void setArcMaxProgress(ArcProgress[] arcProgresses, int max){
+        for (int start = 0; start < arcProgresses.length; start++) {
+            arcProgresses[start].setMax(max);
         }
     }
 }
