@@ -279,7 +279,6 @@ public class UX {
         CardView cardView = new CardView(context);
         LinearLayout.LayoutParams cardParams = new LinearLayout.LayoutParams(width,height);
         cardView.setCardElevation(cardElevation);
-        cardView.setTranslationZ(translationZ);
         cardView.setLayoutParams(cardParams);
         cardView.setUseCompatPadding(shouldUsePadding);
         cardView.setRadius(cornerRadius);
@@ -356,6 +355,15 @@ public class UX {
         for (int start = 0; start < textViews.length; start++) {
             TextView textView = textViews[start];
             textView.setBackgroundColor(color);
+        }
+    }
+    //endregion
+
+    //region set backgroundColor
+    public void setNoDataText(TextView[] textViews, int textResId){
+        for (int start = 0; start < textViews.length; start++) {
+            TextView textView = textViews[start];
+            textView.setText(textResId);
         }
     }
     //endregion

@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/topBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="290dp">
+        android:layout_height="256dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -287,7 +287,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCalorieBreakfast"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -335,7 +336,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfProteinBreakfast"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -382,7 +384,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCarbohydratesBreakfast"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -560,7 +563,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCalorieLunch"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -608,7 +612,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfProteinLunch"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -655,7 +660,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCarbohydratesLunch"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -833,7 +839,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCalorieDinner"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -881,7 +888,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfProteinDinner"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"
@@ -928,7 +936,8 @@
                                     android:textSize="14sp"/>
                                 <TextView
                                     android:id="@+id/AmountOfCarbohydratesDinner"
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:maxLines="1"

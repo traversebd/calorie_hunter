@@ -164,6 +164,9 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             amountOfProteinBreakfast.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsBreakfast.setText(""+foodItem.getAmountOfCarbohydrates());
         }
+        else{
+            ux.setNoDataText(new TextView[]{titleBreakfast,descriptionBreakfast,amountOfCalorieBreakfast,amountOfProteinBreakfast,amountOfCarbsBreakfast},R.string.no_data_found);
+        }
     }
 
     private void setLunchFoodDetails() {
@@ -176,6 +179,9 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             amountOfProteinLunch.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsLunch.setText(""+foodItem.getAmountOfCarbohydrates());
         }
+        else{
+            ux.setNoDataText(new TextView[]{titleLunch,descriptionLunch,amountOfCalorieBreakfast,amountOfCalorieLunch,amountOfCarbsLunch},R.string.no_data_found);
+        }
     }
 
     private void setDinnerFoodDetails() {
@@ -187,6 +193,9 @@ public class MealPlanDetailsActivity extends AppCompatActivity {
             amountOfCalorieDinner.setText(""+foodItem.getAmountOfCalorie()+" KCal");
             amountOfProteinDinner.setText(""+foodItem.getAmountOfProtein());
             amountOfCarbsDinner.setText(""+foodItem.getAmountOfCarbohydrates());
+        }
+        else{
+            ux.setNoDataText(new TextView[]{titleDinner,descriptionDinner,amountOfCalorieDinner,amountOfProteinDinner,amountOfCarbsDinner},R.string.no_data_found);
         }
     }
     //endregion

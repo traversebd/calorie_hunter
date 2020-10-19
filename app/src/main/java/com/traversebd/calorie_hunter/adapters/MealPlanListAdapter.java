@@ -42,11 +42,19 @@ public class MealPlanListAdapter extends RecyclerView.Adapter<MealPlanListAdapte
         holder.Counter.setText(""+(position+1));
         holder.DayOfWeek.setText(mealPlan.getDayOfWeek());
         //region get and set food item texts
-        holder.FoodItem.setText(setFoodItemTexts(mealPlan.getAllFoodItems()));
+        if (mealPlan.getAllFoodItems() != null) {
+            holder.FoodItem.setText(setFoodItemTexts(mealPlan.getAllFoodItems()));
+        } else {
+            holder.FoodItem.setText("No data found");
+        }
         //endregion
         holder.AmountOfCalorie.setText("");
         //region get and set total calorie
-        holder.AmountOfCalorie.setText(""+getTotalCalorie(mealPlan.getAllFoodItems()));
+        if (mealPlan.getAllFoodItems() != null) {
+            holder.AmountOfCalorie.setText(""+getTotalCalorie(mealPlan.getAllFoodItems()));
+        } else {
+            holder.FoodItem.setText("No data found");
+        }
         //endregion
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
