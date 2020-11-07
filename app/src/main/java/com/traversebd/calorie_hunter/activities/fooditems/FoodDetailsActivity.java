@@ -55,7 +55,7 @@ public class FoodDetailsActivity extends AppCompatActivity {
         findViewById(R.id.BackButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FoodDetailsActivity.this,HomeActivity.class));
+                onBackPressed();
             }
         });
         //endregion
@@ -65,11 +65,17 @@ public class FoodDetailsActivity extends AppCompatActivity {
         //endregion
 
         //region set toolbar title
-        toolbarTitle.setText(foodItem.getTitle());
+        if (foodItem != null) {
+            toolbarTitle.setText(foodItem.getTitle());
+        } else {
+            toolbarTitle.setText("No Data Found");
+        }
         //endregion
 
         //region set all details
-        setData();
+        if (foodItem!= null) {
+            setData();
+        }
         //endregion
     }
     //endregion
@@ -104,7 +110,13 @@ public class FoodDetailsActivity extends AppCompatActivity {
     //region activity own method and their operations
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(FoodDetailsActivity.this, HomeActivity.class));
+        if (getIntent().getStringExtra("from").equals("home")) {
+            startActivity(new Intent(FoodDetailsActivity.this, HomeActivity.class));
+        }
+        else if (getIntent().getStringExtra("from").equals("foodList")) {
+            int foodType = getIntent().getIntExtra("foodType",0);
+            startActivity(new Intent(FoodDetailsActivity.this, FoodListActivity.class).putExtra("foodType",foodType));
+        }
     }
     //endregion
 }

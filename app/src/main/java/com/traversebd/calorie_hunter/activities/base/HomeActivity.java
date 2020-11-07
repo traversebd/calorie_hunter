@@ -192,7 +192,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem).putExtra("from","home"));
             }
         });
         //endregion
@@ -210,7 +210,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem).putExtra("from","home"));
             }
         });
         //endregion
@@ -228,7 +228,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem).putExtra("from","home"));
             }
         });
         //endregion
@@ -246,7 +246,7 @@ public class HomeActivity extends AppCompatActivity {
         foodRecyclerAdapter.setOnItemClickListener(new FoodRecyclerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(FoodItem foodItem) {
-                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem));
+                startActivity(new Intent(HomeActivity.this, FoodDetailsActivity.class).putExtra("foodItem",foodItem).putExtra("from","home"));
             }
         });
         //endregion

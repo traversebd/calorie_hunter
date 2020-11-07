@@ -86,6 +86,12 @@ public class FoodListActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.allFoodRecycler);
         recyclerView.setLayoutManager(new VegaLayoutManager());
         CategorizedFoodAdapter adapter = new CategorizedFoodAdapter(prepareDataList(),this);
+        adapter.setOnItemClickListener(new CategorizedFoodAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick(FoodItem foodItem) {
+                startActivity(new Intent(FoodListActivity.this,FoodDetailsActivity.class).putExtra("from","foodList").putExtra("foodType",foodType));
+            }
+        });
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }
